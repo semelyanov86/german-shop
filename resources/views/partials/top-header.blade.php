@@ -5,7 +5,7 @@
                 <div class="header-contact">
                     <ul>
                         <li>{{ setting('site.description') }}</li>
-                        <li><i class="fa fa-phone" aria-hidden="true"></i>Call Us:  {{ setting('site.phone') }}</li>
+                        <li><i class="fa fa-phone" aria-hidden="true"></i>{{ trans('app.Call') }}  {{ setting('site.phone') }}</li>
                     </ul>
                 </div>
             </div>

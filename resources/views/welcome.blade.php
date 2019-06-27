@@ -74,98 +74,10 @@
 
 
     <!-- category -->
-    <section class="pt-0 category-tools ratio3_2">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="slide-4 category-m no-arrow">
-                        <div>
-                            <div class="category-wrapper pt-0">
-                                <div>
-                                    <div>
-                                        <img src="assets/images/tools/category/1.jpg" class="img-fluid blur-up lazyload bg-img" alt="">
-                                    </div>
-                                    <h4>auto parts</h4>
-                                    <ul class="category-link">
-                                        <li><a href="#">d1 milano</a></li>
-                                        <li><a href="#">damaskeening</a></li>
-                                        <li><a href="#">diving watch</a></li>
-                                        <li><a href="#">dollar watch</a></li>
-                                    </ul>
-                                    <a href="#" class="btn btn-classic btn-outline">view more</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="category-wrapper pt-0">
-                                <div>
-                                    <div>
-                                        <img src="assets/images/tools/category/2.jpg" class="img-fluid blur-up lazyload bg-img" alt="">
-                                    </div>
-                                    <h4>brakes & steering</h4>
-                                    <ul class="category-link">
-                                        <li><a href="#">Shock-resistant watch</a></li>
-                                        <li><a href="#">Skeleton watch</a></li>
-                                        <li><a href="#">Slow watch</a></li>
-                                        <li><a href="#">Solar-powered watch</a></li>
-                                    </ul>
-                                    <a href="#" class="btn btn-outline btn-classic">view more</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="category-wrapper pt-0">
-                            <div>
-                                <div>
-                                    <img src="assets/images/tools/category/3.jpg" class="img-fluid blur-up lazyload bg-img" alt="">
-                                </div>
-                                <h4>engine & drivetrain</h4>
-                                <ul class="category-link">
-                                    <li><a href="#">Watchmaking conglomerates</a></li>
-                                    <li><a href="#">Breitling SA</a></li>
-                                    <li><a href="#">Casio watches</a></li>
-                                    <li><a href="#">Citizen Watch</a></li>
-                                </ul>
-                                <a href="#" class="btn btn-outline btn-classic">view more</a>
-                            </div>
-                        </div>
-                        <div class="category-wrapper pt-0">
-                            <div>
-                                <div>
-                                    <img src="assets/images/tools/category/4.jpg" class="img-fluid blur-up lazyload bg-img" alt="">
-                                </div>
-                                <h4>exterior accesories</h4>
-                                <ul class="category-link">
-                                    <li><a href="#">Manufacture d'horlogerie</a></li>
-                                    <li><a href="#">Mechanical watch</a></li>
-                                    <li><a href="#">Microbrand watches</a></li>
-                                    <li><a href="#">MIL-W-46374</a></li>
-                                </ul>
-                                <a href="#" class="btn btn-outline btn-classic">view more</a>
-                            </div>
-                        </div>
-                        <div class="category-wrapper pt-0">
-                            <div>
-                                <div>
-                                    <img src="assets/images/tools/category/5.jpg" class="img-fluid blur-up lazyload bg-img" alt="">
-                                </div>
-                                <h4>other parts</h4>
-                                <ul class="category-link">
-                                    <li><a href="#">d1 milano</a></li>
-                                    <li><a href="#">damaskeening</a></li>
-                                    <li><a href="#">diving watch</a></li>
-                                    <li><a href="#">dollar watch</a></li>
-                                </ul>
-                                <a href="#" class="btn btn-outline btn-classic">view more</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+@include('partials.product-form')
     <!-- category end -->
 
-
+{{--
     <!-- product slider start -->
     <section class="section-b-space tools-grey ratio_square">
         <div class="container">
@@ -941,7 +853,7 @@
             </div>
         </div>
     </section>
-    <!-- product section end -->
+    <!-- product section end -->--}}
 
 
     <!-- logo section -->

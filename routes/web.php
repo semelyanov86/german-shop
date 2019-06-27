@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'HomeController@main')->name('main');
+Route::post('/store', 'HomeController@store')->name('store.order');
 
 
 Route::group(['prefix' => 'admin'], function () {

@@ -3270,6 +3270,7 @@ header.video-header .top-header .header-dropdown li a i {
 .product-box .img-wrapper, .product-wrap .img-wrapper {
   position: relative;
   overflow: hidden;
+  height: 200px;
 }
 .product-box .img-wrapper .front, .product-wrap .img-wrapper .front {
   opacity: 1;
