@@ -865,56 +865,56 @@
                         <div>
                             <div class="logo-block">
                                 <a href="#">
-                                    <img src="assets/images/logos/9.png" alt="">
+                                    <img src="{{asset('assets/images/logos/9.png')}}" alt="">
                                 </a>
                             </div>
                         </div>
                         <div>
                             <div class="logo-block">
                                 <a href="#">
-                                    <img src="assets/images/logos/10.png" alt="">
+                                    <img src="{{asset('assets/images/logos/10.png')}}" alt="">
                                 </a>
                             </div>
                         </div>
                         <div>
                             <div class="logo-block">
                                 <a href="#">
-                                    <img src="assets/images/logos/11.png" alt="">
+                                    <img src="{{asset('assets/images/logos/11.png')}}" alt="">
                                 </a>
                             </div>
                         </div>
                         <div>
                             <div class="logo-block">
                                 <a href="#">
-                                    <img src="assets/images/logos/12.png" alt="">
+                                    <img src="{{asset('assets/images/logos/12.png')}}" alt="">
                                 </a>
                             </div>
                         </div>
                         <div>
                             <div class="logo-block">
                                 <a href="#">
-                                    <img src="assets/images/logos/13.png" alt="">
+                                    <img src="{{asset('assets/images/logos/13.png')}}" alt="">
                                 </a>
                             </div>
                         </div>
                         <div>
                             <div class="logo-block">
                                 <a href="#">
-                                    <img src="assets/images/logos/14.png" alt="">
+                                    <img src="{{asset('assets/images/logos/14.png')}}" alt="">
                                 </a>
                             </div>
                         </div>
                         <div>
                             <div class="logo-block">
                                 <a href="#">
-                                    <img src="assets/images/logos/15.png" alt="">
+                                    <img src="{{asset('assets/images/logos/15.png')}}" alt="">
                                 </a>
                             </div>
                         </div>
                         <div>
                             <div class="logo-block">
                                 <a href="#">
-                                    <img src="assets/images/logos/16.png" alt="">
+                                    <img src="{{asset('assets/images/logos/16.png')}}" alt="">
                                 </a>
                             </div>
                         </div>

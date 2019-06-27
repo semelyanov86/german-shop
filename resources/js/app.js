@@ -29,4 +29,19 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
+    data: {
+        total: 0
+    },
+    methods: {
+        calcPrices: function (e) {
+            let curid = e.currentTarget.getAttribute('data-productid');
+            let price = e.currentTarget.getAttribute('data-price');
+            let value = e.currentTarget.value;
+            let type = e.currentTarget.getAttribute('data-type');
+            let total = value * price;
+            let curModel = document.getElementById('total-' + curid + '-' + type);
+            curModel.innerText = total;
+            this.total += total;
+        }
+    }
 });

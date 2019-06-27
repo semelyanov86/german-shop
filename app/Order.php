@@ -17,4 +17,17 @@ class Order extends Model
     {
         return $this->belongsToMany('App\Product')->withPivot(['quantity', 'type']);
     }
+
+    public function presentTotal($total = false)
+    {
+        if (!$total) {
+            $total = $this->total;
+        }
+        return money_format('€%i', $total / 100);
+    }
+
+    public function getDeliveryDateAttribute()
+    {
+        return $this->created_at->addDays(5)->format('M d Y');
+    }
 }

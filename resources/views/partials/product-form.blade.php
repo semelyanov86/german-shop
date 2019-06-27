@@ -1,4 +1,5 @@
 <section class="section-b-space ratio_asos">
+    <div id="app">
     <div class="collection-wrapper">
         <div class="container">
             <div class="row">
@@ -77,18 +78,18 @@
                                                                 <h5>ab 4 Stck</h5>
                                                             </div>
                                                             <div class="col-3">
-                                                                <h5>{{ $product->price }}</h5>
+                                                                <h5>{{ $product->presentPrice('price') }}</h5>
                                                             </div>
                                                             <div class="col-3">
                                                                 <div class="qty-box">
                                                                     <div class="input-group">
-                                                                        <input type="number" name="quantity[{{$product->id}}][price]" class="form-control input-number" value="0" min="0" max="100">
+                                                                        <input type="number" name="quantity[{{$product->id}}][price]" class="form-control input-number" value="0" min="0" max="100" data-price="{{$product->price}}" data-productid="{{$product->id}}" data-type="price" v-on:change="calcPrices">
                                                                     </div>
                                                                 </div>
 
                                                             </div>
                                                             <div class="col-3">
-                                                                <h5 class="td-color">0.00</h5>
+                                                                <h5 id="total-{{$product->id}}-price" class="td-color">0.00</h5>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -98,18 +99,18 @@
                                                                 <h5>ab 8 Stck</h5>
                                                             </div>
                                                             <div class="col-3">
-                                                                <h5>{{ $product->price8 }}</h5>
+                                                                <h5>{{ $product->presentPrice('price8') }}</h5>
                                                             </div>
                                                             <div class="col-3">
                                                                 <div class="qty-box">
                                                                     <div class="input-group">
-                                                                        <input type="number" name="quantity[{{$product->id}}][price8]" class="form-control input-number" value="0" min="0" max="100">
+                                                                        <input type="number" name="quantity[{{$product->id}}][price8]" class="form-control input-number" value="0" min="0" max="100" data-price="{{$product->price8}}" data-productid="{{$product->id}}" data-type="price8" v-on:change="calcPrices">
                                                                     </div>
                                                                 </div>
 
                                                             </div>
                                                             <div class="col-3">
-                                                                <h5 class="td-color">0.00</h5>
+                                                                <h5 id="total-{{$product->id}}-price8" class="td-color">0.00</h5>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -119,18 +120,18 @@
                                                                 <h5>ab 12 Stck</h5>
                                                             </div>
                                                             <div class="col-3">
-                                                                <h5>{{ $product->price12 }}</h5>
+                                                                <h5>{{ $product->presentPrice('price12') }}</h5>
                                                             </div>
                                                             <div class="col-3">
                                                                 <div class="qty-box">
                                                                     <div class="input-group">
-                                                                        <input type="number" name="quantity[{{$product->id}}][price12]" class="form-control input-number" value="0" min="0" max="100">
+                                                                        <input type="number" name="quantity[{{$product->id}}][price12]" class="form-control input-number" value="0" min="0" max="100" data-price="{{ $product->price12 }}" data-productid="{{$product->id}}" data-type="price12" v-on:change="calcPrices">
                                                                     </div>
                                                                 </div>
 
                                                             </div>
                                                             <div class="col-3">
-                                                                <h5 class="td-color">0.00</h5>
+                                                                <h5 id="total-{{$product->id}}-price12" class="td-color">0.00</h5>
                                                             </div>
                                                         </div>
                                                         <div class="container mt-2">
@@ -139,7 +140,7 @@
                                                                     <h4>Tyre24</h4>
                                                                 </div>
                                                                 <div class="col-6">
-                                                                    <h4>{{ $product->tyre24 }}</h4>
+                                                                    <h4>{{ $product->presentPrice('tyre24') }}</h4>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -155,6 +156,9 @@
                                         </div>
                                     </div>
                                     @endforeach
+                                    <div class="container">
+                                        <h2 class="mt-3">{{trans('app.your-total')}} @{{ total }}</h2>
+                                    </div>
                                 </div>
                             </div>
                             @if($products->count() > 24)
@@ -175,7 +179,7 @@
                                         </div>
                                         <div class="col-xl-6 col-md-6 col-sm-12">
                                             <div class="product-search-count-bottom">
-                                                <h5>Showing Products 1-25 of {{$products->count()}} Result</h5></div>
+                                                <h5>{{trans('app.showing')}} 1-25 of {{$products->count()}} Result</h5></div>
                                         </div>
                                     </div>
                                 </div>
@@ -185,21 +189,32 @@
 
                             <div class="container mt-3">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Email address</label>
-                                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                    <label for="exampleInputEmail1">{{trans('app.email')}}</label>
+                                    <input type="email" name="email" class="form-control @if($errors->has('email')) is-invalid @endif" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                    <small id="emailHelp" class="form-text text-muted">{{trans('app.share-policy')}}</small>
+                                    @if($errors->has('email'))
+                                    <div class="invalid-feedback">
+                                        {{ $errors->first('email') }}
+                                    </div>
+                                        @endif
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputTel">Phone</label>
-                                    <input type="tel" name="phone" class="form-control" id="exampleInputTel" placeholder="Enter phone">
+                                    <label for="exampleInputTel">{{trans('app.phone')}}</label>
+                                    <input type="tel" name="phone" class="form-control @if($errors->has('phone')) is-invalid @endif" id="exampleInputTel" placeholder="Enter phone">
+                                    @if($errors->has('phone'))
+                                        <div class="invalid-feedback">
+                                            {{ $errors->first('phone') }}
+                                        </div>
+                                    @endif
                                 </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">{{trans('app.submit')}}</button>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </section>
 <!-- section End -->

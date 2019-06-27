@@ -17,7 +17,16 @@ return [
     'showing' => 'Showing Products',
     'products-page' => 'Products Par Page',
     'sorting' => 'Sorting items',
-    'products' => 'Products'
-
+    'products' => 'Products',
+    'your-total' => 'Your total is: ',
+    'email' => 'E-mail',
+    'phone' => 'Phone',
+    'name' => 'Name',
+    'share-policy' => 'We\'ll never share your email with anyone else.',
+    'submit' => 'Submit',
+    'fax' => 'Fax',
+    'storeinfo' => 'Store Information',
+    'my-account' => 'My account',
+    'why-choose' => 'Why we choose'
 
 ];

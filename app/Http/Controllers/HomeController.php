@@ -2,13 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OrderCreated;
+use App\Mail\OrderPlaced;
 use App\OrderProduct;
+use App\User;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Category;
+use Illuminate\Support\Facades\Mail;
 use TCG\Voyager\Models\Page;
 use App\Product;
 use App\Order;
+use App\Http\Requests\StoreRequest;
 
 class HomeController extends Controller
 {
@@ -24,9 +29,12 @@ class HomeController extends Controller
         return view('welcome', compact('page_title', 'sliders', 'pages', 'description', 'keywords', 'products'));
     }
 
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
         $quantityCollect = collect(request()->only('quantity')['quantity']);
+        /*$products = $quantityCollect->map(function ($value, $key){
+           return Product::whereId($key)->first();
+        });*/
         $order = Order::create([
             'user_id' => auth()->user() ? auth()->user()->id : null,
             'phone' => $request->phone,
@@ -36,8 +44,17 @@ class HomeController extends Controller
         $total = $this->calcQuantity($quantityCollect, $order);
         $order->total = $total;
         $order->save();
-        dd($order);
-
+        $pages = Page::all();
+        $page_title = $pages[3]->title;
+        $description = $pages[3]->meta_description;
+        $keywords = $pages[3]->meta_keywords;
+        $products = $order->products;
+        $admin_user = User::whereHas('role', function ($query){
+            $query->where('id', 1);
+        })->first();
+//        Mail::to($admin_user)->send(new OrderCreated($order, $total));
+//        Mail::send(new OrderPlaced($order, $total));
+        return view('result', compact('order', 'total', 'products', 'page_title', 'description', 'keywords', 'pages'));
     }
 
     private function calcQuantity($quantityCollect, $order)
