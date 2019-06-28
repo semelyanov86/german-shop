@@ -28,6 +28,12 @@ return [
     'storeinfo' => 'Store Information',
     'my-account' => 'My account',
     'why-choose' => 'Why we choose',
-    'discount' => 'Discount'
+    'discount' => 'Discount',
+    'kuddennr' => 'Kudden Number',
+    'other_address' => 'Different address',
+    'address' => 'Address',
+    'city' => 'City',
+    'zip' => 'Postindex',
+    'same' => 'The same as usual'
 
 ];

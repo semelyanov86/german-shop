@@ -35,11 +35,20 @@ class HomeController extends Controller
         /*$products = $quantityCollect->map(function ($value, $key){
            return Product::whereId($key)->first();
         });*/
+        if ($request->other_address == 'on') {
+            $other = '1';
+        } else {
+            $other = '0';
+        }
         $order = Order::create([
             'user_id' => auth()->user() ? auth()->user()->id : null,
-            'phone' => $request->phone,
+            'kuddennr' => $request->kuddennr,
             'email' => $request->email,
             'name' => $request->name,
+            'other_address' => $other,
+            'street' => $request->street,
+            'city' => $request->city,
+            'postindex' => $request->postindex
         ]);
         $total = $this->calcQuantity($quantityCollect, $order);
         $order->total = $total;

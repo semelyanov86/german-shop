@@ -101,7 +101,7 @@
                     <td>
                         <p>You have a new order!</p>
                         <p>E-mail: {{$order->email}}</p>
-                        <p>Phone: {{$order->phone}}</p>
+                        <p>{{trans('app.kuddennr')}}: {{$order->kuddennr}}</p>
                     </td>
                 </tr>
                 <tr>

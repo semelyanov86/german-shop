@@ -25,8 +25,13 @@ class StoreRequest extends FormRequest
     {
         return [
             'email' => 'required|email',
-            'phone' => 'required|min:5|max:15',
-            'quantity' => 'required|array'
+            'kuddennr' => 'required|numeric|min:5',
+            'quantity' => 'required|array',
+            'name' => 'required_if:other_address,==,on',
+            'street' => 'required_if:other_address,==,on',
+            'city' => 'required_if:other_address,==,on',
+            'postindex' => 'required_if:other_address,==,on|numeric|min:3',
+
         ];
     }
 }

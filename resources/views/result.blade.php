@@ -68,10 +68,14 @@
                     <div class="col-sm-6">
                         <h4>shipping address</h4>
                         <ul class="order-detail">
-                            <li>gerg harvell</li>
-                            <li>568, suite ave.</li>
-                            <li>Austrlia, 235153</li>
-                            <li>Contact No. 987456321</li>
+                            @if($order->other_address)
+                            <li>{{$order->name}}</li>
+                            <li>{{$order->street}}</li>
+                            <li>{{$order->city}}, {{$order->postindex}}</li>
+                            <li>{{trans('app.kuddennr')}}: {{$order->kuddennr}}</li>
+                                @else
+                            <li>{{trans('app.same')}}</li>
+                                @endif
                         </ul>
                     </div>
                     <div class="col-sm-12 payment-mode">

@@ -30,7 +30,8 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
     data: {
-        total: 0
+        total: 0,
+        checked: false
     },
     methods: {
         calcPrices: function (e) {

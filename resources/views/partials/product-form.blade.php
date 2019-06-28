@@ -190,7 +190,7 @@
                             <div class="container mt-3">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">{{trans('app.email')}}</label>
-                                    <input type="email" name="email" class="form-control @if($errors->has('email')) is-invalid @endif" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                    <input type="email" name="email" class="form-control @if($errors->has('email')) is-invalid @endif" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" value="{{old('email')}}">
                                     <small id="emailHelp" class="form-text text-muted">{{trans('app.share-policy')}}</small>
                                     @if($errors->has('email'))
                                     <div class="invalid-feedback">
@@ -199,13 +199,59 @@
                                         @endif
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputTel">{{trans('app.phone')}}</label>
-                                    <input type="tel" name="phone" class="form-control @if($errors->has('phone')) is-invalid @endif" id="exampleInputTel" placeholder="Enter phone">
-                                    @if($errors->has('phone'))
+                                    <label for="exampleInputTel">{{trans('app.kuddennr')}}</label>
+                                    <input type="text" name="kuddennr" class="form-control @if($errors->has('kuddennr')) is-invalid @endif" id="exampleInputTel" placeholder="Enter kudden number" value="{{old('kuddennr')}}">
+                                    @if($errors->has('kuddennr'))
                                         <div class="invalid-feedback">
-                                            {{ $errors->first('phone') }}
+                                            {{ $errors->first('kuddennr') }}
                                         </div>
                                     @endif
+                                </div>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" name="other_address" class="form-check-input" id="other_address" v-model="checked">
+                                    <label class="form-check-label" for="other_address">{{trans('app.other_address')}}</label>
+                                </div>
+                                <div v-if="checked">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="inputEmail4">{{trans('app.name')}}</label>
+                                            <input type="text" class="form-control @if($errors->has('name')) is-invalid @endif" id="name" name="name" placeholder="Name" value="{{old('name')}}">
+                                            @if($errors->has('name'))
+                                                <div class="invalid-feedback">
+                                                    {{ $errors->first('name') }}
+                                                </div>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputAddress">{{trans('app.address')}}</label>
+                                        <input type="text" class="form-control @if($errors->has('street')) is-invalid @endif" id="inputAddress" name="street" placeholder="1234 Main St" value="{{old('street')}}">
+                                        @if($errors->has('street'))
+                                            <div class="invalid-feedback">
+                                                {{ $errors->first('street') }}
+                                            </div>
+                                        @endif
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-8">
+                                            <label for="inputCity">{{trans('app.city')}}</label>
+                                            <input type="text" class="form-control @if($errors->has('city')) is-invalid @endif" name="city" id="inputCity" value="{{old('city')}}">
+                                            @if($errors->has('city'))
+                                                <div class="invalid-feedback">
+                                                    {{ $errors->first('city') }}
+                                                </div>
+                                            @endif
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="inputZip">{{trans('app.zip')}}</label>
+                                            <input type="text" class="form-control @if($errors->has('postindex')) is-invalid @endif" name="postindex" id="inputZip" value="{{old('postindex')}}">
+                                            @if($errors->has('postindex'))
+                                                <div class="invalid-feedback">
+                                                    {{ $errors->first('postindex') }}
+                                                </div>
+                                            @endif
+                                        </div>
+                                    </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary">{{trans('app.submit')}}</button>
                             </div>
