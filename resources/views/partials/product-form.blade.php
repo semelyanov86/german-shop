@@ -83,7 +83,7 @@
                                                             <div class="col-3">
                                                                 <div class="qty-box">
                                                                     <div class="input-group">
-                                                                        <input type="number" name="quantity[{{$product->id}}][price]" class="form-control input-number" value="0" min="0" max="100" data-price="{{$product->price}}" data-productid="{{$product->id}}" data-type="price" v-on:change="calcPrices">
+                                                                        <input type="number" name="quantity[{{$product->id}}][price]" class="form-control input-number" value="0" min="0" max="7" data-price="{{$product->price}}" data-productid="{{$product->id}}" data-type="price" v-on:change="calcPrices">
                                                                     </div>
                                                                 </div>
 
@@ -104,7 +104,7 @@
                                                             <div class="col-3">
                                                                 <div class="qty-box">
                                                                     <div class="input-group">
-                                                                        <input type="number" name="quantity[{{$product->id}}][price8]" class="form-control input-number" value="0" min="0" max="100" data-price="{{$product->price8}}" data-productid="{{$product->id}}" data-type="price8" v-on:change="calcPrices">
+                                                                        <input type="number" name="quantity[{{$product->id}}][price8]" class="form-control input-number" value="0" min="0" max="11" data-price="{{$product->price8}}" data-productid="{{$product->id}}" data-type="price8" v-on:change="calcPrices">
                                                                     </div>
                                                                 </div>
 

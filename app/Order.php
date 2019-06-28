@@ -23,7 +23,7 @@ class Order extends Model
         if (!$total) {
             $total = $this->total;
         }
-        return money_format('€%i', $total / 100);
+        return money_format('€%i', $total);
     }
 
     public function getDeliveryDateAttribute()

@@ -13,6 +13,6 @@ class Product extends Model
 
     public function presentPrice($type)
     {
-        return money_format('€%i', $this->$type / 100);
+        return money_format('€%i', $this->$type);
     }
 }
