@@ -154,7 +154,7 @@
                 </tr>
                 <tr>
                     <td colspan="2" style="line-height: 49px;font-size: 13px;color: #000000;padding-left: 20px;text-align:left;border-right: unset;">Discount :</td>
-                    <td colspan="3" class="price" style="line-height: 49px;text-align: right;padding-right: 28px;font-size: 13px;color: #000000;text-align:right;border-left: unset;"><b>0</b></td>
+                    <td colspan="3" class="price" style="line-height: 49px;text-align: right;padding-right: 28px;font-size: 13px;color: #000000;text-align:right;border-left: unset;"><b>{{$order->presentTotal($order->discount)}}</b></td>
                 </tr>
                 <tr>
                     <td colspan="2" style="line-height: 49px;font-family: Arial;font-size: 13px;color: #000000;padding-left: 20px;text-align:left;border-right: unset;">Gift Wripping: </td>
@@ -169,7 +169,7 @@
                 <tr>
                     <td colspan="2" style="line-height: 49px;font-size: 13px;color: #000000;
                                     padding-left: 20px;text-align:left;border-right: unset;">TOTAL PAID :</td>
-                    <td colspan="3" class="price" style="line-height: 49px;text-align: right;padding-right: 28px;font-size: 13px;color: #000000;text-align:right;border-left: unset;"><b>{{$total}}</b></td>
+                    <td colspan="3" class="price" style="line-height: 49px;text-align: right;padding-right: 28px;font-size: 13px;color: #000000;text-align:right;border-left: unset;"><b>{{$order->presentTotal($total - $order->discount)}}</b></td>
                 </tr>
             </table>
             <table cellpadding="0" cellspacing="0" border="0" align="left" style="width: 100%;margin-top: 30px;    margin-bottom: 30px;">

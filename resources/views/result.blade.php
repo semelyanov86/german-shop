@@ -47,12 +47,12 @@
                     <div class="total-sec">
                         <ul>
                             <li>subtotal <span>{{$order->presentTotal($total)}}</span></li>
-                            <li>shipping <span>€0.00</span></li>
+                            <li>{{trans('app.discount')}} <span>{{$order->presentTotal($order->discount)}}</span></li>
                             <li>tax(GST) <span>€0.00</span></li>
                         </ul>
                     </div>
                     <div class="final-total">
-                        <h3>total <span>{{$order->presentTotal($total)}}</span></h3></div>
+                        <h3>total <span>{{$order->presentTotal($total - $order->discount)}}</span></h3></div>
                 </div>
             </div>
             <div class="col-lg-6">

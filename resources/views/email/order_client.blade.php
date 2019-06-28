@@ -192,7 +192,7 @@
                         <p style="font-size: 14px;">Discount :</p>
                     </td>
                     <td colspan="2" align="right">
-                        <b> $0</b>
+                        <b> {{$order->presentTotal($order->discount)}}</b>
                     </td>
                 </tr>
                 <tr class="pad-left-right-space ">
@@ -200,7 +200,7 @@
                         <p style="font-size: 14px;">Total :</p>
                     </td>
                     <td class="m-b-5" colspan="2" align="right">
-                        <b>{{$total}}</b>
+                        <b>{{$order->presentTotal($total - $order->discount)}}</b>
                     </td>
                 </tr>
 

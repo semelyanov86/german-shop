@@ -13,20 +13,21 @@ return [
     |
     */
 
-    'Call' => 'Please call us: ',
-    'showing' => 'Showing Products',
-    'products-page' => 'Products Par Page',
-    'sorting' => 'Sorting items',
-    'products' => 'Products',
-    'your-total' => 'Your total is: ',
-    'email' => 'E-mail',
-    'phone' => 'Phone',
+    'Call' => 'Bitte rufen Sie uns an: ',
+    'showing' => 'Produkte ansehen',
+    'products-page' => 'Produkte pro Site',
+    'sorting' => 'Sortieren',
+    'products' => 'Produkte',
+    'your-total' => 'Gesamt Preis: ',
+    'email' => 'E-Mail',
+    'phone' => 'Telefone',
     'name' => 'Name',
     'share-policy' => 'We\'ll never share your email with anyone else.',
     'submit' => 'Submit',
     'fax' => 'Fax',
     'storeinfo' => 'Store Information',
     'my-account' => 'My account',
-    'why-choose' => 'Why we choose'
+    'why-choose' => 'Why we choose',
+    'discount' => 'Discount'
 
 ];

@@ -26,6 +26,15 @@ class Order extends Model
         return money_format('€%i', $total);
     }
 
+    public function getDiscountAttribute()
+    {
+        return $this->products->filter(function($value){
+            return $value->pivot->quantity > 40;
+        })->map(function ($item){
+            return $item->price12 * $item->pivot->quantity * 0.01;
+        })->sum();
+    }
+
     public function getDeliveryDateAttribute()
     {
         return $this->created_at->addDays(5)->format('M d Y');
