@@ -5,50 +5,14 @@
             <div class="row">
                 <div class="collection-content col">
                     <div class="page-main-content">
-                        <div class="top-banner-wrapper">
-                            <a href="#"><img src="/storage/{{$pages[1]->image}}" class="img-fluid blur-up lazyload" alt=""></a>
-                            <div class="top-banner-content small-section">
-                               {!! $pages[1]->body !!}
-                            </div>
-                        </div>
+                        @include('partials.banner-product')
                         <form action="{{route('store.order')}}" method="post">
                             @csrf()
                         <div class="collection-product-wrapper">
                             <div class="product-top-filter">
                                 <div class="row">
                                     <div class="col-12">
-                                        <div class="product-filter-content">
-                                            <div class="search-count">
-                                                <h5>{{trans('app.showing')}} 1-24 of {{$products->count()}} {{trans('app.products')}}</h5></div>
-                                            <div class="collection-view">
-                                                <ul>
-                                                    <li><i class="fa fa-th grid-layout-view"></i></li>
-                                                    <li><i class="fa fa-list-ul list-layout-view"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="collection-grid-view">
-                                                <ul>
-                                                    <li><img src="{{ asset('assets/images/icon/2.png') }}" alt="" class="product-2-layout-view"></li>
-                                                    <li><img src="{{ asset('assets/images/icon/3.png') }}" alt="" class="product-3-layout-view"></li>
-                                                    <li><img src="{{ asset('assets/images/icon/4.png') }}" alt="" class="product-4-layout-view"></li>
-                                                    <li><img src="{{ asset('assets/images/icon/6.png') }}" alt="" class="product-6-layout-view"></li>
-                                                </ul>
-                                            </div>
-                                            <div class="product-page-per-view">
-                                                <select>
-                                                    <option value="High to low">24 {{trans('app.products-page')}}</option>
-                                                    <option value="Low to High">50 {{trans('app.products-page')}}</option>
-                                                    <option value="Low to High">100 {{trans('app.products-page')}}</option>
-                                                </select>
-                                            </div>
-                                            <div class="product-page-filter">
-                                                <select>
-                                                    <option value="High to low">{{trans('app.sorting')}}</option>
-                                                    <option value="Low to High">50 {{trans('app.products')}}</option>
-                                                    <option value="Low to High">100 {{trans('app.products')}}</option>
-                                                </select>
-                                            </div>
-                                        </div>
+                                        @include('partials.product-filter')
                                     </div>
                                 </div>
                             </div>
@@ -104,7 +68,7 @@
                                                             <div class="col-3">
                                                                 <div class="qty-box">
                                                                     <div class="input-group">
-                                                                        <input type="number" name="quantity[{{$product->id}}][price8]" class="form-control input-number" value="0" min="8" max="11" data-price="{{$product->price8}}" data-productid="{{$product->id}}" data-type="price8" v-on:change="calcPrices">
+                                                                        <input type="number" name="quantity[{{$product->id}}][price8]" class="form-control input-number" value="" min="8" max="11" data-price="{{$product->price8}}" data-productid="{{$product->id}}" data-type="price8" v-on:change="calcPrices">
                                                                     </div>
                                                                 </div>
 
@@ -125,7 +89,7 @@
                                                             <div class="col-3">
                                                                 <div class="qty-box">
                                                                     <div class="input-group">
-                                                                        <input type="number" name="quantity[{{$product->id}}][price12]" class="form-control input-number" value="0" min="12" max="100" data-price="{{ $product->price12 }}" data-productid="{{$product->id}}" data-type="price12" v-on:change="calcPrices">
+                                                                        <input type="number" name="quantity[{{$product->id}}][price12]" class="form-control input-number" value="" min="12" max="100" data-price="{{ $product->price12 }}" data-productid="{{$product->id}}" data-type="price12" v-on:change="calcPrices">
                                                                     </div>
                                                                 </div>
 
@@ -227,7 +191,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="inputAddress">{{trans('app.address')}}</label>
-                                        <input type="text" class="form-control @if($errors->has('street')) is-invalid @endif" id="inputAddress" name="street" placeholder="{{trans('placeholder-street')}}" value="{{old('street')}}">
+                                        <input type="text" class="form-control @if($errors->has('street')) is-invalid @endif" id="inputAddress" name="street" placeholder="{{trans('app.placeholder-street')}}" value="{{old('street')}}">
                                         @if($errors->has('street'))
                                             <div class="invalid-feedback">
                                                 {{ $errors->first('street') }}

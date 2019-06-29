@@ -39,5 +39,8 @@ return [
     'placeholder-email' => 'Enter your email',
     'placeholder-kudden' => 'Enter kudden number',
     'placeholder-street' => '1234 Main St',
+    'edit' => 'Edit',
+    'place' => 'Place',
+    'already-placed' => 'Order successfully placed!'
 
 ];

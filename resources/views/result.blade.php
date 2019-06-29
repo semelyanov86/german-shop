@@ -89,6 +89,16 @@
                     </div>
                 </div>
             </div>
+            @if($order->placed < 1)
+            <div class="col-md-12 mt-2">
+                <a href="{{route('store.edit', $order->id)}}" role="button" class="btn btn-secondary">{{trans('app.edit')}}</a>
+                <a href="{{route('store.place', $order->id)}}" role="button" class="btn btn-success">{{trans('app.place')}}</a>
+            </div>
+                @else
+                <div class="col-md-12 mt-2">
+                <p>{{trans('app.already-placed')}}</p>
+                </div>
+            @endif
         </div>
     </div>
 </section>

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    protected $fillable = ['user_id', 'kuddennr', 'email', 'name', 'total', 'shipped', 'error', 'street', 'city', 'postindex', 'other_address'];
+    protected $fillable = ['user_id', 'kuddennr', 'email', 'name', 'total', 'shipped', 'error', 'street', 'city', 'postindex', 'other_address', 'placed'];
 
     public function user()
     {
@@ -20,6 +20,9 @@ class Order extends Model
 
     public function presentTotal($total = false)
     {
+        if ($total === 0) {
+            return '€' . '0.00';
+        }
         if (!$total) {
             $total = $this->total;
         }
@@ -28,11 +31,16 @@ class Order extends Model
 
     public function getDiscountAttribute()
     {
-        return $this->products->filter(function($value){
+        $result = $this->products->filter(function($value){
             return $value->pivot->quantity > 40;
         })->map(function ($item){
             return $item->price12 * $item->pivot->quantity * 0.01;
-        })->sum();
+        });
+        if ($result->count() < 1) {
+            return 0;
+        } else {
+            return $result->sum();
+        }
     }
 
     public function getDeliveryDateAttribute()

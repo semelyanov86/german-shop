@@ -51,19 +51,19 @@
                     <div class="payment-card-bottom">
                         <ul>
                             <li>
-                                <a href="#"><img src="assets/images/icon/visa.png" alt=""></a>
+                                <a href="#"><img src="{{asset('assets/images/icon/visa.png')}}" alt=""></a>
                             </li>
                             <li>
-                                <a href="#"><img src="assets/images/icon/mastercard.png" alt=""></a>
+                                <a href="#"><img src="{{asset('assets/images/icon/mastercard.png')}}" alt=""></a>
                             </li>
                             <li>
-                                <a href="#"><img src="assets/images/icon/paypal.png" alt=""></a>
+                                <a href="#"><img src="{{asset('assets/images/icon/paypal.png')}}" alt=""></a>
                             </li>
                             <li>
-                                <a href="#"><img src="assets/images/icon/american-express.png" alt=""></a>
+                                <a href="#"><img src="{{asset('assets/images/icon/american-express.png')}}" alt=""></a>
                             </li>
                             <li>
-                                <a href="#"><img src="assets/images/icon/discover.png" alt=""></a>
+                                <a href="#"><img src="{{asset('assets/images/icon/discover.png')}}" alt=""></a>
                             </li>
                         </ul>
                     </div>
@@ -92,7 +92,7 @@
                 <li>
                     <div class="media">
                         <a href="#">
-                            <img alt="" class="mr-3" src="assets/images/tools/pro/1.jpg">
+                            <img alt="" class="mr-3" src="{{asset('assets/images/tools/pro/1.jpg')}}">
                         </a>
                         <div class="media-body">
                             <a href="#">
@@ -112,7 +112,7 @@
                 <li>
                     <div class="media">
                         <a href="#">
-                            <img alt="" class="mr-3" src="assets/images/tools/pro/2.jpg">
+                            <img alt="" class="mr-3" src="{{asset('assets/images/tools/pro/2.jpg')}}">
                         </a>
                         <div class="media-body">
                             <a href="#">
@@ -131,7 +131,7 @@
                 </li>
                 <li>
                     <div class="media">
-                        <a href="#"><img alt="" class="mr-3" src="assets/images/tools/pro/3.jpg"></a>
+                        <a href="#"><img alt="" class="mr-3" src="{{asset('assets/images/tools/pro/3.jpg')}}"></a>
                         <div class="media-body">
                             <a href="#"><h4>item name</h4></a>
                             <h4><span>1 x $ 299.00</span></h4>
@@ -179,7 +179,7 @@
                 <div class="row">
                     <div class="col-lg-6  col-xs-12">
                         <div class="quick-view-img">
-                            <img src="assets/images/pro3/1.jpg" alt="" class="img-fluid blur-up lazyload">
+                            <img src="{{asset('assets/images/pro3/1.jpg')}}" alt="" class="img-fluid blur-up lazyload">
                         </div>
                     </div>
                     <div class="col-lg-6 rtl-text">
@@ -253,7 +253,7 @@
                                 </button>
                                 <div class="media">
                                     <a href="#">
-                                        <img class="img-fluid blur-up lazyload pro-img" src="assets/images/fashion/product/43.jpg" alt="">
+                                        <img class="img-fluid blur-up lazyload pro-img" src="{{asset('assets/images/fashion/product/43.jpg')}}" alt="">
                                     </a>
                                     <div class="media-body align-self-center text-center">
                                         <a href="#">
@@ -283,7 +283,7 @@
                                             <div class="img-wrapper">
                                                 <div class="front">
                                                     <a href="#">
-                                                        <img src="assets/images/fashion/product/1.jpg" class="img-fluid blur-up lazyload mb-1" alt="cotton top">
+                                                        <img src="{{asset('assets/images/fashion/product/1.jpg')}}" class="img-fluid blur-up lazyload mb-1" alt="cotton top">
                                                     </a>
                                                 </div>
                                                 <div class="product-detail">
@@ -296,7 +296,7 @@
                                             <div class="img-wrapper">
                                                 <div class="front">
                                                     <a href="#">
-                                                        <img src="assets/images/fashion/product/34.jpg" class="img-fluid blur-up lazyload mb-1" alt="cotton top">
+                                                        <img src="{{asset('assets/images/fashion/product/34.jpg')}}" class="img-fluid blur-up lazyload mb-1" alt="cotton top">
                                                     </a>
                                                 </div>
                                                 <div class="product-detail">
@@ -309,7 +309,7 @@
                                             <div class="img-wrapper">
                                                 <div class="front">
                                                     <a href="#">
-                                                        <img src="assets/images/fashion/product/13.jpg" class="img-fluid blur-up lazyload mb-1" alt="cotton top">
+                                                        <img src="{{asset('assets/images/fashion/product/13.jpg')}}" class="img-fluid blur-up lazyload mb-1" alt="cotton top">
                                                     </a>
                                                 </div>
                                                 <div class="product-detail">
@@ -322,7 +322,7 @@
                                             <div class="img-wrapper">
                                                 <div class="front">
                                                     <a href="#">
-                                                        <img src="assets/images/fashion/product/19.jpg" class="img-fluid blur-up lazyload mb-1" alt="cotton top">
+                                                        <img src="{{asset('assets/images/fashion/product/19.jpg')}}" class="img-fluid blur-up lazyload mb-1" alt="cotton top">
                                                     </a>
                                                 </div>
                                                 <div class="product-detail">

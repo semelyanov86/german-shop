@@ -60,6 +60,6 @@ const app = new Vue({
             this.sum = parseFloat(sum).toFixed(2);
             this.saving = parseFloat(saving).toFixed(2);
         }
-    }
+    },
 
 });

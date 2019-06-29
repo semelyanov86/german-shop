@@ -29,6 +29,31 @@ class HomeController extends Controller
         return view('welcome', compact('page_title', 'sliders', 'pages', 'description', 'keywords', 'products'));
     }
 
+    public function edit($id)
+    {
+        $order = Order::where(['id' => $id, 'placed' => '0'])->firstOrFail();
+        $pages = Page::all();
+        $page_title = $pages[3]->title;
+        $description = $pages[3]->meta_description;
+        $keywords = $pages[3]->meta_keywords;
+        $products = $order->products;
+        return view('edit', compact('order', 'page_title', 'description', 'keywords', 'pages', 'products'));
+    }
+
+    public function place($id)
+    {
+        $order = Order::where(['id' => $id, 'placed' => '0'])->firstOrFail();
+        $order->placed = '1';
+        $order->save();
+        $pages = Page::all();
+        $page_title = $pages[3]->title;
+        $description = $pages[3]->meta_description;
+        $keywords = $pages[3]->meta_keywords;
+        $products = $order->products;
+        $total = $order->total;
+        return view('result', compact('order', 'page_title', 'description', 'keywords', 'pages', 'products', 'total'));
+    }
+
     public function store(StoreRequest $request)
     {
         $quantityCollect = collect(request()->only('quantity')['quantity']);
@@ -40,16 +65,30 @@ class HomeController extends Controller
         } else {
             $other = '0';
         }
-        $order = Order::create([
-            'user_id' => auth()->user() ? auth()->user()->id : null,
-            'kuddennr' => $request->kuddennr,
-            'email' => $request->email,
-            'name' => $request->name,
-            'other_address' => $other,
-            'street' => $request->street,
-            'city' => $request->city,
-            'postindex' => $request->postindex
-        ]);
+        if ($request->orderid) {
+            $order = Order::find($request->orderid);
+            $order->user_id = auth()->user() ? auth()->user()->id : null;
+            $order->kuddennr = $request->kuddennr;
+            $order->email = $request->email;
+            $order->name = $request->name;
+            $order->other_address = $other;
+            $order->street = $request->street;
+            $order->city = $request->city;
+            $order->postindex = $request->postindex;
+            $order->save();
+        } else {
+            $order = Order::create([
+                'user_id' => auth()->user() ? auth()->user()->id : null,
+                'kuddennr' => $request->kuddennr,
+                'email' => $request->email,
+                'name' => $request->name,
+                'other_address' => $other,
+                'street' => $request->street,
+                'city' => $request->city,
+                'postindex' => $request->postindex,
+                'placed' => '0'
+            ]);
+        }
         $total = $this->calcQuantity($quantityCollect, $order);
         $order->total = $total;
         $order->save();
@@ -73,7 +112,7 @@ class HomeController extends Controller
             return collect($name)->filter(function ($value){
                 return $value > 0;
             })->each(function ($item, $key) use ($id, $order){
-                OrderProduct::create([
+                OrderProduct::updateOrCreate(['order_id' => $order->id, 'product_id' => $id],[
                     'order_id' => $order->id,
                     'product_id' => $id,
                     'quantity' => $item,
