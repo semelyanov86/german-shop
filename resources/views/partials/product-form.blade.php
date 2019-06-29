@@ -104,7 +104,7 @@
                                                             <div class="col-3">
                                                                 <div class="qty-box">
                                                                     <div class="input-group">
-                                                                        <input type="number" name="quantity[{{$product->id}}][price8]" class="form-control input-number" value="0" min="0" max="11" data-price="{{$product->price8}}" data-productid="{{$product->id}}" data-type="price8" v-on:change="calcPrices">
+                                                                        <input type="number" name="quantity[{{$product->id}}][price8]" class="form-control input-number" value="0" min="8" max="11" data-price="{{$product->price8}}" data-productid="{{$product->id}}" data-type="price8" v-on:change="calcPrices">
                                                                     </div>
                                                                 </div>
 
@@ -125,7 +125,7 @@
                                                             <div class="col-3">
                                                                 <div class="qty-box">
                                                                     <div class="input-group">
-                                                                        <input type="number" name="quantity[{{$product->id}}][price12]" class="form-control input-number" value="0" min="0" max="100" data-price="{{ $product->price12 }}" data-productid="{{$product->id}}" data-type="price12" v-on:change="calcPrices">
+                                                                        <input type="number" name="quantity[{{$product->id}}][price12]" class="form-control input-number" value="0" min="12" max="100" data-price="{{ $product->price12 }}" data-productid="{{$product->id}}" data-type="price12" v-on:change="calcPrices">
                                                                     </div>
                                                                 </div>
 
@@ -140,6 +140,7 @@
                                                                     <h4>Tyre24</h4>
                                                                 </div>
                                                                 <div class="col-6">
+                                                                    <input type="hidden" id="{{$product->id}}tyre24" value="{{$product->tyre24}}">
                                                                     <h4>{{ $product->presentPrice('tyre24') }}</h4>
                                                                 </div>
                                                             </div>
@@ -157,7 +158,8 @@
                                     </div>
                                     @endforeach
                                     <div class="container">
-                                        <h2 class="mt-3">{{trans('app.your-total')}} @{{ total }}</h2>
+                                        <h2 class="mt-3">{{trans('app.your-total')}} € @{{ sum }}</h2>
+                                        <h3 class="mt-2">{{trans('app.savings')}} € @{{ saving }}</h3>
                                     </div>
                                 </div>
                             </div>
@@ -190,7 +192,7 @@
                             <div class="container mt-3">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">{{trans('app.email')}}</label>
-                                    <input type="email" name="email" class="form-control @if($errors->has('email')) is-invalid @endif" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" value="{{old('email')}}">
+                                    <input type="email" name="email" class="form-control @if($errors->has('email')) is-invalid @endif" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="{{trans('app.placeholder-email')}}" value="{{old('email')}}">
                                     <small id="emailHelp" class="form-text text-muted">{{trans('app.share-policy')}}</small>
                                     @if($errors->has('email'))
                                     <div class="invalid-feedback">
@@ -200,7 +202,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputTel">{{trans('app.kuddennr')}}</label>
-                                    <input type="text" name="kuddennr" class="form-control @if($errors->has('kuddennr')) is-invalid @endif" id="exampleInputTel" placeholder="Enter kudden number" value="{{old('kuddennr')}}">
+                                    <input type="text" name="kuddennr" class="form-control @if($errors->has('kuddennr')) is-invalid @endif" id="exampleInputTel" placeholder="{{trans('app.placeholder-kudden')}}" value="{{old('kuddennr')}}">
                                     @if($errors->has('kuddennr'))
                                         <div class="invalid-feedback">
                                             {{ $errors->first('kuddennr') }}
@@ -215,7 +217,7 @@
                                     <div class="form-row">
                                         <div class="form-group">
                                             <label for="inputEmail4">{{trans('app.name')}}</label>
-                                            <input type="text" class="form-control @if($errors->has('name')) is-invalid @endif" id="name" name="name" placeholder="Name" value="{{old('name')}}">
+                                            <input type="text" class="form-control @if($errors->has('name')) is-invalid @endif" id="name" name="name" placeholder="{{trans('app.name')}}" value="{{old('name')}}">
                                             @if($errors->has('name'))
                                                 <div class="invalid-feedback">
                                                     {{ $errors->first('name') }}
@@ -225,7 +227,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="inputAddress">{{trans('app.address')}}</label>
-                                        <input type="text" class="form-control @if($errors->has('street')) is-invalid @endif" id="inputAddress" name="street" placeholder="1234 Main St" value="{{old('street')}}">
+                                        <input type="text" class="form-control @if($errors->has('street')) is-invalid @endif" id="inputAddress" name="street" placeholder="{{trans('placeholder-street')}}" value="{{old('street')}}">
                                         @if($errors->has('street'))
                                             <div class="invalid-feedback">
                                                 {{ $errors->first('street') }}

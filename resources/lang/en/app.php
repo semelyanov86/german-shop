@@ -34,6 +34,10 @@ return [
     'address' => 'Address',
     'city' => 'City',
     'zip' => 'Postindex',
-    'same' => 'The same as usual'
+    'same' => 'The same as usual',
+    'savings' => 'Your total savings: ',
+    'placeholder-email' => 'Enter your email',
+    'placeholder-kudden' => 'Enter kudden number',
+    'placeholder-street' => '1234 Main St',
 
 ];

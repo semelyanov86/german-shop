@@ -30,8 +30,10 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
     data: {
-        total: 0,
-        checked: false
+        total: {0 : [0, 0]},
+        checked: false,
+        sum: 0,
+        saving: 0
     },
     methods: {
         calcPrices: function (e) {
@@ -40,9 +42,24 @@ const app = new Vue({
             let value = e.currentTarget.value;
             let type = e.currentTarget.getAttribute('data-type');
             let total = value * price;
+            let tyre24 = document.getElementById(curid + 'tyre24').value * value;
             let curModel = document.getElementById('total-' + curid + '-' + type);
             curModel.innerText = total;
-            this.total += total;
+            this.total[curid + type] = [total, tyre24];
+            this.totalSum();
+        },
+        totalSum: function () {
+            var sum = 0;
+            var saving = 0;
+            for( var el in this.total ) {
+                if( this.total.hasOwnProperty( el ) ) {
+                    sum += parseFloat( this.total[el][0] );
+                    saving += this.total[el][1] - parseFloat( this.total[el][0] );
+                }
+            }
+            this.sum = parseFloat(sum).toFixed(2);
+            this.saving = parseFloat(saving).toFixed(2);
         }
     }
+
 });

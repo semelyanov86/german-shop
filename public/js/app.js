@@ -49213,8 +49213,12 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 var app = new Vue({
   el: '#app',
   data: {
-    total: 0,
-    checked: false
+    total: {
+      0: [0, 0]
+    },
+    checked: false,
+    sum: 0,
+    saving: 0
   },
   methods: {
     calcPrices: function calcPrices(e) {
@@ -49223,9 +49227,25 @@ var app = new Vue({
       var value = e.currentTarget.value;
       var type = e.currentTarget.getAttribute('data-type');
       var total = value * price;
+      var tyre24 = document.getElementById(curid + 'tyre24').value * value;
       var curModel = document.getElementById('total-' + curid + '-' + type);
       curModel.innerText = total;
-      this.total += total;
+      this.total[curid + type] = [total, tyre24];
+      this.totalSum();
+    },
+    totalSum: function totalSum() {
+      var sum = 0;
+      var saving = 0;
+
+      for (var el in this.total) {
+        if (this.total.hasOwnProperty(el)) {
+          sum += parseFloat(this.total[el][0]);
+          saving += this.total[el][1] - parseFloat(this.total[el][0]);
+        }
+      }
+
+      this.sum = parseFloat(sum).toFixed(2);
+      this.saving = parseFloat(saving).toFixed(2);
     }
   }
 });
