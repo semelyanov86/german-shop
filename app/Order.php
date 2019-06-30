@@ -43,6 +43,16 @@ class Order extends Model
         }
     }
 
+    public function getTaxAttribute()
+    {
+        return ($this->total - $this->discount) * 0.19;
+    }
+
+    public function getFinalTotalAttribute()
+    {
+        return $this->total - $this->discount + $this->tax;
+    }
+
     public function getDeliveryDateAttribute()
     {
         return $this->created_at->addDays(5)->format('M d Y');

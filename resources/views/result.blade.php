@@ -1,25 +1,15 @@
 @extends('master')
 @section('content')
 
-<!-- thank-you section start -->
-<section class="section-b-space light-layout">
-    <div class="container mt-5 pt-5">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="success-text"><i class="fa fa-check-circle" aria-hidden="true"></i>
-                    {!! $pages[3]->body !!}
-                    <p>Order ID: {{$order->id}}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Section ends -->
+    @if($order->placed > 0)
 
+@include('partials.thank-you')
+
+@endif
 
 <!-- order-detail section start -->
 <section class="section-b-space">
-    <div class="container">
+    <div class="container @if($order->placed < 1) mt-5 pt-5 @endif">
         <div class="row">
             <div class="col-lg-6">
                 <div class="product-order">
@@ -34,7 +24,7 @@
                         </div>
                         <div class="col-3 order_detail">
                             <div>
-                                <h4>quantity</h4>
+                                <h4>{{trans('app.quantity')}}</h4>
                                 <h5>{{$product->pivot->quantity}}</h5></div>
                         </div>
                         <div class="col-3 order_detail">
@@ -46,13 +36,13 @@
                     @endforeach
                     <div class="total-sec">
                         <ul>
-                            <li>subtotal <span>{{$order->presentTotal($total)}}</span></li>
+                            <li>{{trans('app.subtotal')}} <span>{{$order->presentTotal($total)}}</span></li>
                             <li>{{trans('app.discount')}} <span>{{$order->presentTotal($order->discount)}}</span></li>
-                            <li>tax(GST) <span>€0.00</span></li>
+                            <li>{{trans('app.tax')}} <span>{{$order->presentTotal($order->tax)}}</span></li>
                         </ul>
                     </div>
                     <div class="final-total">
-                        <h3>total <span>{{$order->presentTotal($total - $order->discount)}}</span></h3></div>
+                        <h3>{{trans('app.total')}} <span>{{$order->presentTotal($order->final_total)}}</span></h3></div>
                 </div>
             </div>
             <div class="col-lg-6">
