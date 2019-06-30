@@ -55,6 +55,7 @@ return [
     'delivery-date' => 'expected date of delivery',
     'price' => 'price',
     'product-name' => 'Product name',
-    'agb' => 'AGB'
+    'agb' => 'AGB',
+    'order-processed' => 'Order Is Successfully Processsed And Your Order Is On The Way'
 
 ];

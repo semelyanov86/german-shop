@@ -112,8 +112,9 @@
                 <tr>
                     <td>
                         <p style="font-size: 14px;"><b>Hi {{$order->name}},</b></p>
-                        <p style="font-size: 14px;">Order Is Successfully Processsed And Your Order Is On The Way,</p>
-                        <p style="font-size: 14px;">Order ID : {{$order->id}},</p>
+                        <p style="font-size: 14px;">{{trans('app.order-processed')}},</p>
+                        <p style="font-size: 14px;">{{trans('app.order')}} ID : {{$order->id}},</p>
+                        <p style="font-size: 14px;">{{trans('app.kuddennr')}} : {{$order->kuddennr}},</p>
                     </td>
                 </tr>
             </table>
@@ -135,9 +136,9 @@
             </table>--}}
             <table class="order-detail" border="0" cellpadding="0" cellspacing="0"  align="left" style="width: 100%;    margin-bottom: 50px;">
                 <tr align="left">
-                    <th>PRODUCT</th>
+                    <th>{{trans('app.products')}}</th>
                     <th style="padding-left: 15px;">DESCRIPTION</th>
-                    <th>QUANTITY</th>
+                    <th>{{trans('app.quantity')}}</th>
                     <th>PRICE </th>
                 </tr>
                 @foreach($order->products as $product)
@@ -165,10 +166,10 @@
                     </td>
                 <tr class="pad-left-right-space">
                     <td colspan="2" align="left">
-                        <p style="font-size: 14px;">TAX :</p>
+                        <p style="font-size: 14px;">{{trans('app.tax')}} :</p>
                     </td>
                     <td colspan="2" align="right">
-                        <b>$0</b>
+                        <b>{{$order->presentTotal($order->tax)}}</b>
                     </td>
                 </tr>
                 <tr class="pad-left-right-space">
@@ -197,10 +198,10 @@
                 </tr>
                 <tr class="pad-left-right-space ">
                     <td class="m-b-5" colspan="2" align="left">
-                        <p style="font-size: 14px;">Total :</p>
+                        <p style="font-size: 14px;">{{trans('app.total')}} :</p>
                     </td>
                     <td class="m-b-5" colspan="2" align="right">
-                        <b>{{$order->presentTotal($total - $order->discount)}}</b>
+                        <b>{{$order->presentTotal($order->final_total)}}</b>
                     </td>
                 </tr>
 

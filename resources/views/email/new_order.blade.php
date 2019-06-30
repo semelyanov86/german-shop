@@ -100,7 +100,7 @@
                 <tr>
                     <td>
                         <p>You have a new order!</p>
-                        <p>E-mail: {{$order->email}}</p>
+                        <p>{{trans('app.email')}}: {{$order->email}}</p>
                         <p>{{trans('app.kuddennr')}}: {{$order->kuddennr}}</p>
                     </td>
                 </tr>
@@ -125,10 +125,10 @@
             </table>
             <table class="order-detail" border="0" cellpadding="0" cellspacing="0"  align="left">
                 <tr align="left">
-                    <th>PRODUCT</th>
+                    <th>{{trans('app.products')}}</th>
                     <th style="padding-left: 15px;">DESCRIPTION</th>
-                    <th>QUANTITY</th>
-                    <th>PRICE </th>
+                    <th>{{trans('app.quantity')}}</th>
+                    <th>{{trans('app.price')}} </th>
                 </tr>
                 @foreach($order->products as $product)
                 <tr>
@@ -140,7 +140,7 @@
                     </td>
                     <td valign="top" style="padding-left: 15px;">
                         <h5 style="font-size: 14px; color:#444;margin-top:15px;    margin-bottom: 0px;">Price Type : <span> {{$product->pivot->type}}</span> </h5>
-                        <h5 style="font-size: 14px; color:#444;margin-top: 10px;">QTY : <span>{{$product->pivot->quantity}}</span></h5>
+                        <h5 style="font-size: 14px; color:#444;margin-top: 10px;">{{trans('app.quantity')}} : <span>{{$product->pivot->quantity}}</span></h5>
                     </td>
                     <td valign="top" style="padding-left: 15px;">
                         <h5 style="font-size: 14px; color:#444;margin-top:15px"><b>{{$product->presentPrice($product->pivot->type)}}</b></h5>
@@ -149,16 +149,16 @@
                 @endforeach
 
                 <tr>
-                    <td colspan="2" style="line-height: 49px;font-size: 13px;color: #000000;padding-left: 20px;text-align:left;border-right: unset;">Products:</td>
+                    <td colspan="2" style="line-height: 49px;font-size: 13px;color: #000000;padding-left: 20px;text-align:left;border-right: unset;">{{trans('app.products')}}:</td>
                     <td colspan="3" class="price" style="line-height: 49px;text-align: right;padding-right: 28px;font-size: 13px;color: #000000;text-align:right;border-left: unset;"><b>{{$total}}</b></td>
                 </tr>
                 <tr>
-                    <td colspan="2" style="line-height: 49px;font-size: 13px;color: #000000;padding-left: 20px;text-align:left;border-right: unset;">Discount :</td>
+                    <td colspan="2" style="line-height: 49px;font-size: 13px;color: #000000;padding-left: 20px;text-align:left;border-right: unset;">{{ trans('app.discount') }} :</td>
                     <td colspan="3" class="price" style="line-height: 49px;text-align: right;padding-right: 28px;font-size: 13px;color: #000000;text-align:right;border-left: unset;"><b>{{$order->presentTotal($order->discount)}}</b></td>
                 </tr>
                 <tr>
-                    <td colspan="2" style="line-height: 49px;font-family: Arial;font-size: 13px;color: #000000;padding-left: 20px;text-align:left;border-right: unset;">Gift Wripping: </td>
-                    <td colspan="3" class="price" style="line-height: 49px;text-align: right;padding-right: 28px;font-size: 13px;color: #000000;text-align:right;border-left: unset;"><b>0</b></td>
+                    <td colspan="2" style="line-height: 49px;font-family: Arial;font-size: 13px;color: #000000;padding-left: 20px;text-align:left;border-right: unset;">{{trans('app.tax')}}: </td>
+                    <td colspan="3" class="price" style="line-height: 49px;text-align: right;padding-right: 28px;font-size: 13px;color: #000000;text-align:right;border-left: unset;"><b>{{$order->presentTotal($order->tax)}}</b></td>
                 </tr>
                 <tr>
                     <td colspan="2" style="line-height: 49px;font-size: 13px;color: #000000;
@@ -168,8 +168,8 @@
                 </tr>
                 <tr>
                     <td colspan="2" style="line-height: 49px;font-size: 13px;color: #000000;
-                                    padding-left: 20px;text-align:left;border-right: unset;">TOTAL PAID :</td>
-                    <td colspan="3" class="price" style="line-height: 49px;text-align: right;padding-right: 28px;font-size: 13px;color: #000000;text-align:right;border-left: unset;"><b>{{$order->presentTotal($total - $order->discount)}}</b></td>
+                                    padding-left: 20px;text-align:left;border-right: unset;">{{trans('app.total')}} :</td>
+                    <td colspan="3" class="price" style="line-height: 49px;text-align: right;padding-right: 28px;font-size: 13px;color: #000000;text-align:right;border-left: unset;"><b>{{$order->presentTotal($order->final_total)}}</b></td>
                 </tr>
             </table>
             <table cellpadding="0" cellspacing="0" border="0" align="left" style="width: 100%;margin-top: 30px;    margin-bottom: 30px;">
@@ -180,8 +180,12 @@
                     </td>
                     <td width="57" height="25" class="user-info"><img src="assets/images/email-temp/space.jpg" alt=" " height="25" width="57"></td>
                     <td class="user-info" style="font-size: 13px; font-weight: 400; color: #444444; letter-spacing: 0.2px;width: 50%;">
-                        <h5 style="font-size: 16px;font-weight: 500;color: #000; line-height: 16px; padding-bottom: 13px; border-bottom: 1px solid #e6e8eb; letter-spacing: -0.65px; margin-top:0; margin-bottom: 13px;">SHIPPING ADDRESS</h5>
-                        <p style="text-align: left;font-weight: normal; font-size: 14px; color: #000000;line-height: 21px;    margin-top: 0;">268 Cambridge Lane New Albany,<br> IN 47150268 Cambridge Lane <br>New Albany, IN 47150</p>
+                        <h5 style="font-size: 16px;font-weight: 500;color: #000; line-height: 16px; padding-bottom: 13px; border-bottom: 1px solid #e6e8eb; letter-spacing: -0.65px; margin-top:0; margin-bottom: 13px;">{{trans('app.shipping-address')}}</h5>
+                        @if($order->other_address)
+                        <p style="text-align: left;font-weight: normal; font-size: 14px; color: #000000;line-height: 21px;    margin-top: 0;">{{$order->name}},<br> {{$order->street}} <br>{{$order->city}}, {{$order->postindex}}</p>
+                            @else
+                            <p style="text-align: left;font-weight: normal; font-size: 14px; color: #000000;line-height: 21px;    margin-top: 0;">The same</p>
+                            @endif
                     </td>
                 </tr>
                 </tbody></table>
