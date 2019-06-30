@@ -19,7 +19,7 @@
                         <div class="col-3"><img src="/storage/{{$product->image}}" alt="" class="img-fluid blur-up lazyload"></div>
                         <div class="col-3 order_detail">
                             <div>
-                                <h4>product name</h4>
+                                <h4>{{trans('app.product-name')}}</h4>
                                 <h5>{{$product->name}}</h5></div>
                         </div>
                         <div class="col-3 order_detail">
@@ -29,7 +29,7 @@
                         </div>
                         <div class="col-3 order_detail">
                             <div>
-                                <h4>price</h4>
+                                <h4>{{trans('app.price')}}</h4>
                                 <h5>{{$product->presentPrice($product->pivot->type)}}</h5></div>
                         </div>
                     </div>
@@ -48,15 +48,15 @@
             <div class="col-lg-6">
                 <div class="row order-success-sec">
                     <div class="col-sm-6">
-                        <h4>summery</h4>
+                        <h4>{{trans('app.summary')}}</h4>
                         <ul class="order-detail">
-                            <li>order ID: {{$order->id}}</li>
-                            <li>Order Date: {{$order->created_at}}</li>
-                            <li>Order Total: {{$order->presentTotal($total)}}</li>
+                            <li>{{trans('app.order')}} ID: {{$order->id}}</li>
+                            <li>{{trans('app.order')}} {{trans('app.date')}}: {{$order->created_at}}</li>
+                            <li>{{trans('app.order')}} {{trans('app.total')}}: {{$order->presentTotal($total)}}</li>
                         </ul>
                     </div>
                     <div class="col-sm-6">
-                        <h4>shipping address</h4>
+                        <h4>{{trans('app.shipping-address')}}</h4>
                         <ul class="order-detail">
                             @if($order->other_address)
                             <li>{{$order->name}}</li>
@@ -69,12 +69,12 @@
                         </ul>
                     </div>
                     <div class="col-sm-12 payment-mode">
-                        <h4>payment method</h4>
+                        <h4>{{trans('app.payment-method')}}</h4>
                         <p>{{$pages[3]->meta_description}}</p>
                     </div>
                     <div class="col-md-12">
                         <div class="delivery-sec">
-                            <h3>expected date of delivery</h3>
+                            <h3>{{trans('app.delivery-date')}}</h3>
                             <h2>{{$order->delivery_date}}</h2></div>
                     </div>
                 </div>

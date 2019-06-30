@@ -32,13 +32,32 @@
                                                     <button data-toggle="modal" data-target="#addtocart"  title="Add to cart"><i class="ti-shopping-cart" ></i></button> <a href="javascript:void(0)" title="Add to Wishlist"><i class="ti-heart" aria-hidden="true"></i></a> <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View"><i class="ti-search" aria-hidden="true"></i></a> <a href="compare.html" title="Compare"><i class="ti-reload" aria-hidden="true"></i></a></div>
                                             </div>
                                             <div class="product-detail">
-                                                <div>
-                                                    <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></div><a href="product-page(no-sidebar).html"><h6>{{ $product->name }}</h6></a>
+                                                <div class="mt-2">
+{{--                                                    <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></div>--}}
+                                                    <a href="product-page(no-sidebar).html"><h6>{{ $product->name }}</h6></a>
+                                                    <div><h5>EAN: {{$product->ean}}</h5></div>
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <h5>dB: {{$product->db}}</h5>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <h5>Rollwiderstand: {{$product->rolling}}</h5>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <h5>Nasshaftung: {{$product->wet}}</h5>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <h5>Gerauschem: {{$product->gera}}</h5>
+                                                        </div>
+                                                    </div>
+
                                                     <p>{{ $product->details }}</p>
 {{--                                                    <h4>{{ $product->price }}</h4>--}}
                                                     <div class="container mt-2">
                                                         <div class="row">
-                                                            <div class="col-3">
+                                                            <div class="col-4">
                                                                 <h5>ab 4 Stck</h5>
                                                             </div>
                                                             <div class="col-3">
@@ -47,19 +66,19 @@
                                                             <div class="col-3">
                                                                 <div class="qty-box">
                                                                     <div class="input-group">
-                                                                        <input type="number" name="quantity[{{$product->id}}][price]" class="form-control input-number" value="0" min="0" max="7" data-price="{{$product->price}}" data-productid="{{$product->id}}" data-type="price" v-on:change="calcPrices">
+                                                                        <input type="number" name="quantity[{{$product->id}}][price]" class="form-control input-number" value="" min="4" max="7" data-price="{{$product->price}}" data-productid="{{$product->id}}" data-type="price" v-on:change="calcPrices">
                                                                     </div>
                                                                 </div>
 
                                                             </div>
-                                                            <div class="col-3">
+                                                            <div class="col-2">
                                                                 <h5 id="total-{{$product->id}}-price" class="td-color">0.00</h5>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="container mt-2">
                                                         <div class="row">
-                                                            <div class="col-3">
+                                                            <div class="col-4">
                                                                 <h5>ab 8 Stck</h5>
                                                             </div>
                                                             <div class="col-3">
@@ -73,14 +92,14 @@
                                                                 </div>
 
                                                             </div>
-                                                            <div class="col-3">
+                                                            <div class="col-2">
                                                                 <h5 id="total-{{$product->id}}-price8" class="td-color">0.00</h5>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="container mt-2">
                                                         <div class="row">
-                                                            <div class="col-3">
+                                                            <div class="col-4">
                                                                 <h5>ab 12 Stck</h5>
                                                             </div>
                                                             <div class="col-3">
@@ -94,7 +113,7 @@
                                                                 </div>
 
                                                             </div>
-                                                            <div class="col-3">
+                                                            <div class="col-2">
                                                                 <h5 id="total-{{$product->id}}-price12" class="td-color">0.00</h5>
                                                             </div>
                                                         </div>
@@ -121,7 +140,7 @@
                                         </div>
                                     </div>
                                     @endforeach
-                                    <div class="container">
+                                    <div class="container mt-2">
                                         <h2 class="mt-3">{{trans('app.your-total')}} € @{{ sum }}</h2>
                                         <h3 class="mt-2">{{trans('app.savings')}} € @{{ saving }}</h3>
                                     </div>
@@ -217,6 +236,19 @@
                                                 </div>
                                             @endif
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input class="form-check-input @if($errors->has('agb')) is-invalid @endif" name="agb" type="checkbox" value="1" id="agb" checked required>
+                                        <label class="form-check-label" for="agb">
+                                            {{trans('app.agb')}}
+                                        </label>
+                                        @if($errors->has('postindex'))
+                                        <div class="invalid-feedback">
+                                            {{$errors->first('agb')}}
+                                        </div>
+                                            @endif
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary">{{trans('app.submit')}}</button>
