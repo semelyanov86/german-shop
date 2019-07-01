@@ -55,6 +55,6 @@ class Order extends Model
 
     public function getDeliveryDateAttribute()
     {
-        return $this->created_at->addDays(5)->format('M d Y');
+        return $this->created_at->addDays(5)->format('d M Y');
     }
 }

@@ -44,15 +44,18 @@ class HomeController extends Controller
     {
         $order = Order::where(['id' => $id, 'placed' => '0'])->firstOrFail();
         $order->placed = '1';
+        $total = $order->total;
+        $admin_user = User::whereHas('role', function ($query){
+            $query->where('id', 1);
+        })->first();
+        Mail::to($admin_user)->send(new OrderCreated($order, $total));
+        Mail::send(new OrderPlaced($order, $total));
         $order->save();
         $pages = Page::all();
         $page_title = $pages[3]->title;
         $description = $pages[3]->meta_description;
         $keywords = $pages[3]->meta_keywords;
         $products = $order->products;
-        $total = $order->total;
-        //        Mail::to($admin_user)->send(new OrderCreated($order, $total));
-        //        Mail::send(new OrderPlaced($order, $total));
         return view('result', compact('order', 'page_title', 'description', 'keywords', 'pages', 'products', 'total'));
     }
 
@@ -99,9 +102,6 @@ class HomeController extends Controller
         $description = $pages[3]->meta_description;
         $keywords = $pages[3]->meta_keywords;
         $products = $order->products;
-        $admin_user = User::whereHas('role', function ($query){
-            $query->where('id', 1);
-        })->first();
         return view('result', compact('order', 'total', 'products', 'page_title', 'description', 'keywords', 'pages'));
     }
 

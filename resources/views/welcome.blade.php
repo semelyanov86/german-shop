@@ -53,7 +53,7 @@
 
 
     <!-- about section start-->
-    <section>
+{{--    <section>
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
@@ -69,7 +69,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>--}}
     <!-- about section end-->
 
 
