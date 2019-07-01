@@ -60,7 +60,7 @@ body {
   font-family: Lato, sans-serif;
   position: relative;
   background: #ffffff;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 h1 {
@@ -76,7 +76,7 @@ h1 span {
 }
 
 h2 {
-  font-size: 36px;
+  font-size: 28px;
   color: #222222;
   text-transform: uppercase;
   font-weight: 700;
@@ -110,7 +110,7 @@ h5 {
 h6 {
   font-size: 14px;
   font-weight: 400;
-  color: #777777;
+  color: #2817a2;
   line-height: 24px;
 }
 
@@ -967,7 +967,7 @@ header.header-tools .top-header {
   background-color: transparent;
 }
 header.header-tools .top-header .container {
-  background-color: #ff4c3b;
+  background-color: #e85b12;
 }
 header.header-tools .top-header .header-contact {
   padding: 10px 0;
@@ -3456,8 +3456,8 @@ header.video-header .top-header .header-dropdown li a i {
   font-size: 16px;
 }
 .product-box .product-detail h4, .product-box .product-info h4, .product-wrap .product-detail h4, .product-wrap .product-info h4 {
-  font-size: 18px;
-  color: #222222;
+  font-size: 16px;
+  color: #ca3813;
   font-weight: 700;
   margin-bottom: 0;
   -webkit-transition: all 0.5s ease;
@@ -3624,6 +3624,31 @@ header.video-header .top-header .header-dropdown li a i {
   transition: all 0.2s ease;
   -webkit-animation: fadeInUp 400ms ease-in-out;
           animation: fadeInUp 400ms ease-in-out;
+}
+
+.product-box .product-features {
+	width:96%;
+	margin:30px 0;
+	padding:2px 2%;
+	background:rgb(19,115,169)
+}
+
+.product-box .product-features h5 {
+	margin-bottom:0;
+	color:#fff;
+	font-size:12px
+}
+
+.product-box .product-features h5 i {
+	display:inline-block;
+	vertical-align:top;
+	margin-right:2%;
+	padding:1px 3px;
+	color:#222;
+	font-size:14px;
+	font-weight:700;
+	font-style:normal;
+	background:#fff
 }
 
 .addtocart_count {
@@ -14579,6 +14604,14 @@ body.dark {
   .brand-logo img {
     height: 25px;
   }
+  
+.product-box .product-features h5 {
+	font-size:10px
+}
+
+.product-box .product-features h5 i {
+	font-size:12px
+}
 }
 /*=====================
     29.Responsive CSS start

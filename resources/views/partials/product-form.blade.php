@@ -5,7 +5,6 @@
             <div class="row">
                 <div class="collection-content col">
                     <div class="page-main-content">
-                        @include('partials.banner-product')
                         <form action="{{route('store.order')}}" method="post">
                             @csrf()
                         <div class="collection-product-wrapper">
@@ -29,33 +28,10 @@
                                             <div class="product-detail">
                                                 <div class="mt-2">
 {{--                                                    <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></div>--}}
-                                                    <a href="product-page(no-sidebar).html"><h6>{{ $product->name }}</h6></a>
+                                                    <h6 style="margin-top:30px">{{ $product->name }}</h6>
                                                     <div class="row">
-                                                        <div class="col-4">
-                                                            <h5>dB: </h5>
-                                                        </div>
-                                                        <div class="col-2">
-                                                            <h5>{{$product->db}}</h5>
-                                                        </div>
-                                                        <div class="col-4">
-                                                            <h5>Rollwiderstand: </h5>
-                                                        </div>
-                                                        <div class="col-2">
-                                                            <h5>{{$product->rolling}}</h5>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-4">
-                                                            <h5>Nasshaftung: {{$product->wet}}</h5>
-                                                        </div>
-                                                        <div class="col-2">
-                                                            <h5>{{$product->wet}}</h5>
-                                                        </div>
-                                                        <div class="col-4">
-                                                            <h5>Gerauschem: </h5>
-                                                        </div>
-                                                        <div class="col-2">
-                                                            <h5>{{$product->gera}}</h5>
+                                                        <div class="product-features">
+                                                            <h5>dB: <i>{{$product->db}}</i> Rollwiderstand: <i>{{$product->rolling}}</i> Nasshaftung: <i>{{$product->wet}}</i> Gerauschem: <i>{{$product->gera}}</i></h5>
                                                         </div>
                                                     </div>
 
@@ -78,7 +54,7 @@
 
                                                             </div>
                                                             <div class="col-2">
-                                                                <h5 id="total-{{$product->id}}-price" class="td-color">0.00</h5>
+                                                                <h5 id="total-{{$product->id}}-price" class="td-color">0,00</h5>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -99,7 +75,7 @@
 
                                                             </div>
                                                             <div class="col-2">
-                                                                <h5 id="total-{{$product->id}}-price8" class="td-color">0.00</h5>
+                                                                <h5 id="total-{{$product->id}}-price8" class="td-color">0,00</h5>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -120,15 +96,15 @@
 
                                                             </div>
                                                             <div class="col-2">
-                                                                <h5 id="total-{{$product->id}}-price12" class="td-color">0.00</h5>
+                                                                <h5 id="total-{{$product->id}}-price12" class="td-color">0,00</h5>
                                                             </div>
                                                         </div>
-                                                        <div class="container mt-2">
+                                                        <div class="mt-2">
                                                             <div class="row">
-                                                                <div class="col-6">
+                                                                <div class="col-4">
                                                                     <h4>Tyre24</h4>
                                                                 </div>
-                                                                <div class="col-6">
+                                                                <div class="col-4">
                                                                     <input type="hidden" id="{{$product->id}}tyre24" value="{{$product->tyre24}}">
                                                                     <h4>{{ $product->presentPrice('tyre24') }}</h4>
                                                                 </div>

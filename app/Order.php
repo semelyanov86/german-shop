@@ -26,20 +26,24 @@ class Order extends Model
         if (!$total) {
             $total = $this->total;
         }
-        return money_format('€%i', $total);
+        setlocale(LC_MONETARY, 'de_DE');
+//        return money_format('€%i', $total);
+        return '€' .  number_format($total,  2, ',', '.');
     }
 
     public function getDiscountAttribute()
     {
-        $result = $this->products->filter(function($value){
-            return $value->pivot->quantity > 40;
-        })->map(function ($item){
-            return $item->price12 * $item->pivot->quantity * 0.01;
+        $qty = $this->products->sum(function ($product){
+            return $product->pivot->quantity;
         });
-        if ($result->count() < 1) {
-            return 0;
+        if ($qty > 40) {
+            $result = $this->total * 0.01;
+            return $result;
+            /*$result = $this->products->map(function ($item){
+                return $item->price12 * $item->pivot->quantity * 0.01;
+            });*/
         } else {
-            return $result->sum();
+            return 0;
         }
     }
 

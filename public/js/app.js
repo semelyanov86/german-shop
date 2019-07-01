@@ -49229,7 +49229,9 @@ var app = new Vue({
       var total = value * price;
       var tyre24 = document.getElementById(curid + 'tyre24').value * value;
       var curModel = document.getElementById('total-' + curid + '-' + type);
-      curModel.innerText = '€' + total.toLocaleString('de-DE');
+      curModel.innerText = '€' + total.toLocaleString('de-DE', {
+        minimumFractionDigits: 2
+      });
       this.total[curid + type] = [total, tyre24];
       this.totalSum();
     },
@@ -49244,8 +49246,12 @@ var app = new Vue({
         }
       }
 
-      this.sum = sum.toLocaleString('de-DE');
-      this.saving = saving.toLocaleString('de-DE');
+      this.sum = sum.toLocaleString('de-DE', {
+        minimumFractionDigits: 2
+      });
+      this.saving = saving.toLocaleString('de-DE', {
+        minimumFractionDigits: 2
+      });
     }
   }
 });
