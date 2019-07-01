@@ -36,8 +36,13 @@ class HomeController extends Controller
         $page_title = $pages[3]->title;
         $description = $pages[3]->meta_description;
         $keywords = $pages[3]->meta_keywords;
-        $products = $order->products;
-        return view('edit', compact('order', 'page_title', 'description', 'keywords', 'pages', 'products'));
+        $other_products = Product::where('active', 1)->get();
+        $products = $order->products->union($other_products);
+
+            /*->filter(function ($value, $key) use ($products){
+            return !$products->contains($value);
+        });*/
+        return view('edit', compact('order', 'page_title', 'description', 'keywords', 'pages', 'products', 'other_products'));
     }
 
     public function place($id)

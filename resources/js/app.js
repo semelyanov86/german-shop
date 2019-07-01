@@ -44,7 +44,7 @@ const app = new Vue({
             let total = value * price;
             let tyre24 = document.getElementById(curid + 'tyre24').value * value;
             let curModel = document.getElementById('total-' + curid + '-' + type);
-            curModel.innerText = total;
+            curModel.innerText = '€' + total.toLocaleString('de-DE');
             this.total[curid + type] = [total, tyre24];
             this.totalSum();
         },
@@ -57,8 +57,8 @@ const app = new Vue({
                     saving += this.total[el][1] - parseFloat( this.total[el][0] );
                 }
             }
-            this.sum = parseFloat(sum).toFixed(2);
-            this.saving = parseFloat(saving).toFixed(2);
+            this.sum = sum.toLocaleString('de-DE');
+            this.saving = saving.toLocaleString('de-DE');
         }
     },
 
