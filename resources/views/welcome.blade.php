@@ -857,7 +857,7 @@
 
 
     <!-- logo section -->
-    <section class="section-b-space tools-brand">
+ {{--   <section class="section-b-space tools-brand">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -922,6 +922,6 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>--}}
     <!-- logo section end -->
 @endsection

@@ -31,7 +31,8 @@ class StoreRequest extends FormRequest
             'street' => 'required_if:other_address,==,on',
             'city' => 'required_if:other_address,==,on',
             'postindex' => 'required_if:other_address,==,on|numeric|min:3',
-            'agb' => 'accepted'
+            'agb' => 'accepted',
+            'info' => 'min:3'
 
         ];
     }

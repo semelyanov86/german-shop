@@ -16,7 +16,7 @@
         </nav>
     </div>
     <div>
-        <div class="icon-nav">
+        {{--<div class="icon-nav">
             <ul>
                 <li class="onhover-div mobile-search">
                     <div><img src="assets/images/icon/search.png" onclick="openSearch()" class="img-fluid blur-up lazyload" alt="">
@@ -64,6 +64,6 @@
                         <i class="ti-shopping-cart"></i></div>
                 </li>
             </ul>
-        </div>
+        </div>--}}
     </div>
 </div>

@@ -85,6 +85,7 @@ class HomeController extends Controller
             $order->street = $request->street;
             $order->city = $request->city;
             $order->postindex = $request->postindex;
+            $order->info = $request->info;
             $order->save();
         } else {
             $order = Order::create([
@@ -96,7 +97,8 @@ class HomeController extends Controller
                 'street' => $request->street,
                 'city' => $request->city,
                 'postindex' => $request->postindex,
-                'placed' => '0'
+                'placed' => '0',
+                'info' => $request->info
             ]);
         }
         $total = $this->calcQuantity($quantityCollect, $order);

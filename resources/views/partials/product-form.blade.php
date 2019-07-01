@@ -23,33 +23,39 @@
                                         <div class="product-box">
                                             <div class="img-wrapper">
                                                 <div class="front">
-                                                    <a href="#"><img src="{{ '/storage/' . $product->image }}" class="img-fluid blur-up lazyload bg-img" alt=""></a>
+                                                    <img src="{{ '/storage/' . $product->image }}" class="img-fluid blur-up lazyload" alt="">
                                                 </div>
-                                                <div class="back">
-                                                    <a href="#"><img src="{{ '/storage/' . $product->image }}" class="img-fluid blur-up lazyload bg-img" alt=""></a>
-                                                </div>
-                                                <div class="cart-info cart-wrap">
-                                                    <button data-toggle="modal" data-target="#addtocart"  title="Add to cart"><i class="ti-shopping-cart" ></i></button> <a href="javascript:void(0)" title="Add to Wishlist"><i class="ti-heart" aria-hidden="true"></i></a> <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View"><i class="ti-search" aria-hidden="true"></i></a> <a href="compare.html" title="Compare"><i class="ti-reload" aria-hidden="true"></i></a></div>
                                             </div>
                                             <div class="product-detail">
                                                 <div class="mt-2">
 {{--                                                    <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></div>--}}
                                                     <a href="product-page(no-sidebar).html"><h6>{{ $product->name }}</h6></a>
-                                                    <div><h5>EAN: {{$product->ean}}</h5></div>
                                                     <div class="row">
-                                                        <div class="col-6">
-                                                            <h5>dB: {{$product->db}}</h5>
+                                                        <div class="col-4">
+                                                            <h5>dB: </h5>
                                                         </div>
-                                                        <div class="col-6">
-                                                            <h5>Rollwiderstand: {{$product->rolling}}</h5>
+                                                        <div class="col-2">
+                                                            <h5>{{$product->db}}</h5>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <h5>Rollwiderstand: </h5>
+                                                        </div>
+                                                        <div class="col-2">
+                                                            <h5>{{$product->rolling}}</h5>
                                                         </div>
                                                     </div>
                                                     <div class="row">
-                                                        <div class="col-6">
+                                                        <div class="col-4">
                                                             <h5>Nasshaftung: {{$product->wet}}</h5>
                                                         </div>
-                                                        <div class="col-6">
-                                                            <h5>Gerauschem: {{$product->gera}}</h5>
+                                                        <div class="col-2">
+                                                            <h5>{{$product->wet}}</h5>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <h5>Gerauschem: </h5>
+                                                        </div>
+                                                        <div class="col-2">
+                                                            <h5>{{$product->gera}}</h5>
                                                         </div>
                                                     </div>
 
@@ -192,13 +198,21 @@
                                         </div>
                                     @endif
                                 </div>
+                                <div class="form-group">
+                                    <label for="info">{{trans('app.info')}}</label>
+                                    <input type="text" name="info" class="form-control @if($errors->has('info')) is-invalid @endif" id="info" placeholder="{{trans('app.info')}}" value="{{old('info')}}">
+                                    @if($errors->has('info'))
+                                        <div class="invalid-feedback">
+                                            {{ $errors->first('info') }}
+                                        </div>
+                                    @endif
+                                </div>
                                 <div class="form-group form-check">
                                     <input type="checkbox" name="other_address" class="form-check-input" id="other_address" v-model="checked">
                                     <label class="form-check-label" for="other_address">{{trans('app.other_address')}}</label>
                                 </div>
                                 <div v-if="checked">
-                                    <div class="form-row">
-                                        <div class="form-group">
+                                    <div class="form-group">
                                             <label for="inputEmail4">{{trans('app.name')}}</label>
                                             <input type="text" class="form-control @if($errors->has('name')) is-invalid @endif" id="name" name="name" placeholder="{{trans('app.name')}}" value="{{old('name')}}">
                                             @if($errors->has('name'))
@@ -206,7 +220,6 @@
                                                     {{ $errors->first('name') }}
                                                 </div>
                                             @endif
-                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="inputAddress">{{trans('app.address')}}</label>

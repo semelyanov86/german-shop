@@ -38,7 +38,7 @@
 
 <!-- footer section start -->
 <footer class="sticky-footer  blur-up lazyload" style="background-image: url('/storage/{{$pages[2]->image}}')">
-@include('partials.footersect')
+{{--@include('partials.footersect')--}}
     <div class="sub-footer dark-subfooter">
         <div class="container">
             <div class="row">
