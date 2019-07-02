@@ -22,7 +22,7 @@
                                         <div class="product-wrapper-grid">
                                             <div class="row">
                                                 @foreach($products as $product)
-                                                    <div class="col-lg-4 col-md-6 col-grid-box">
+                                                    <div class="col-xl-4 col-lg-6 col-grid-box">
                                                         <div class="product-box">
                                                             <div class="img-wrapper">
                                                                 <div class="front">
@@ -36,12 +36,18 @@
                                                             </div>
                                                             <div class="product-detail">
                                                                 <div>
-                                                                    <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></div><a href="product-page(no-sidebar).html"><h6>{{ $product->name }}</h6></a>
+                                                                    {{--<div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></div>--}}
+                                                                    <h6 style="min-height:60px;margin-top:40px">{{ $product->name }}</h6>
+                                                                    <div class="row">
+                                                                        <div class="product-features">
+                                                                            <h5>dB: <i>{{$product->db}}</i> Rollwiderstand: <i>{{$product->rolling}}</i> Nasshaftung: <i>{{$product->wet}}</i> Gerauschem: <i>{{$product->gera}}</i></h5>
+                                                                        </div>
+                                                                    </div>
                                                                     <p>{{ $product->details }}</p>
                                                                     {{--                                                    <h4>{{ $product->price }}</h4>--}}
                                                                     <div class="container mt-2">
                                                                         <div class="row">
-                                                                            <div class="col-3">
+                                                                            <div class="col-4">
                                                                                 <h5>ab 4 Stck</h5>
                                                                             </div>
                                                                             <div class="col-3">
@@ -55,7 +61,7 @@
                                                                                 </div>
 
                                                                             </div>
-                                                                            <div class="col-3">
+                                                                            <div class="col-2">
                                                                                 <h5 id="total-{{$product->id}}-price" class="td-color">@if($product->pivot && $product->pivot->type == 'price') {{$product->price * $product->pivot->quantity}} @else 0.00 @endif</h5>
                                                                             </div>
                                                                         </div>
@@ -101,12 +107,12 @@
                                                                                 <h5 id="total-{{$product->id}}-price12" class="td-color">@if($product->pivot && $product->pivot->type == 'price12') {{$product->price12 * $product->pivot->quantity}} @else 0.00 @endif</h5>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="container mt-2">
+                                                                        <div class="mt-2">
                                                                             <div class="row">
-                                                                                <div class="col-6">
+                                                                                <div class="col-4">
                                                                                     <h4>Tyre24</h4>
                                                                                 </div>
-                                                                                <div class="col-6">
+                                                                                <div class="col-4">
                                                                                     <input type="hidden" id="{{$product->id}}tyre24" value="{{$product->tyre24}}">
                                                                                     <h4>{{ $product->presentPrice('tyre24') }}</h4>
                                                                                 </div>
@@ -168,6 +174,15 @@
                                                 </div>
                                             @endif
                                         </div>
+                                        <div class="form-group">
+                                            <label for="info">{{trans('app.info')}}</label>
+                                            <input type="text" name="info" class="form-control @if($errors->has('info')) is-invalid @endif" id="info" placeholder="{{trans('app.info')}}" value="{{old('info', $order->info)}}">
+                                            @if($errors->has('info'))
+                                                <div class="invalid-feedback">
+                                                    {{ $errors->first('info') }}
+                                                </div>
+                                            @endif
+                                        </div>
                                         <div class="form-group form-check">
                                             <input type="checkbox" name="other_address" class="form-check-input" id="other_address" v-model="checked">
                                             <label class="form-check-label" for="other_address">{{trans('app.other_address')}}</label>
@@ -213,6 +228,17 @@
                                                     @endif
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input @if($errors->has('agb')) is-invalid @endif" name="agb" type="checkbox" value="1" id="agb" checked required>
+                                            <label class="form-check-label" for="agb">
+                                                {{trans('app.agb')}}
+                                            </label>
+                                            @if($errors->has('postindex'))
+                                                <div class="invalid-feedback">
+                                                    {{$errors->first('agb')}}
+                                                </div>
+                                            @endif
                                         </div>
                                         <button type="submit" class="btn btn-primary">{{trans('app.submit')}}</button>
                                     </div>

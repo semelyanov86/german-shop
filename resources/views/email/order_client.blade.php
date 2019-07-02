@@ -115,6 +115,7 @@
                         <p style="font-size: 14px;">{{trans('app.order-processed')}},</p>
                         <p style="font-size: 14px;">{{trans('app.order')}} ID : {{$order->id}},</p>
                         <p style="font-size: 14px;">{{trans('app.kuddennr')}} : {{$order->kuddennr}},</p>
+                        <p style="font-size: 14px;">{{trans('app.info')}} : {{$order->info}}</p>
                     </td>
                 </tr>
             </table>
@@ -150,7 +151,7 @@
                         <h5 style="margin-top: 15px;">{{$product->name}}</h5>
                     </td>
                     <td valign="top" style="padding-left: 15px;">
-                        <h5 style="font-size: 14px; color:#444;margin-top: 10px;">QTY : <span>{{$product->pivot->quantity}}</span></h5>
+                        <h5 style="font-size: 14px; color:#444;margin-top: 10px;"><span>{{$product->pivot->quantity}}</span></h5>
                     </td>
                     <td valign="top" style="padding-left: 15px;">
                         <h5 style="font-size: 14px; color:#444;margin-top:15px"><b>{{$product->presentPrice($product->pivot->type)}}</b></h5>
@@ -162,7 +163,7 @@
                         <p style="font-size: 14px;">Subtotal : </p>
                     </td>
                     <td class="m-t-5" colspan="2" align="right">
-                        <b style>{{$total}}</b>
+                        <b style>{{$order->presentTotal($total)}}</b>
                     </td>
                 <tr class="pad-left-right-space">
                     <td colspan="2" align="left">
@@ -170,22 +171,6 @@
                     </td>
                     <td colspan="2" align="right">
                         <b>{{$order->presentTotal($order->tax)}}</b>
-                    </td>
-                </tr>
-                <tr class="pad-left-right-space">
-                    <td colspan="2" align="left">
-                        <p style="font-size: 14px;">VAT :</p>
-                    </td>
-                    <td colspan="2" align="right">
-                        <b>$0</b>
-                    </td>
-                </tr>
-                <tr class="pad-left-right-space">
-                    <td colspan="2" align="left">
-                        <p style="font-size: 14px;">SHIPPING Charge :</p>
-                    </td>
-                    <td colspan="2" align="right">
-                        <b>$0</b>
                     </td>
                 </tr>
                 <tr class="pad-left-right-space">

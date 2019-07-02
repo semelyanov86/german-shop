@@ -27,6 +27,9 @@
 {{--                        @include('partials.left-menu')--}}
                         {{ Menu::display('main', 'main-menu') }}
                     </div>
+                    <div id="main-logo">
+                        <img alt="BaRo GmbH Logo" src="{{asset('assets/images/baro-gmbh.png')}}">
+                    </div>
                 </div>
             </div>
         </div>
@@ -44,28 +47,12 @@
             <div class="row">
                 <div class="col-xl-6 col-md-6 col-sm-12">
                     <div class="footer-end">
-                        <p><i class="fa fa-copyright" aria-hidden="true"></i>  {{$pages[2]->title}}</p>
+                        <p><i class="fa fa-copyright" aria-hidden="true"></i>  2019 Copyrigth BaRo GmbH <a href="https://baro-reifen.de/agb/">AGB</a> <a href="https://baro-reifen.de/datenschutz/">Datenschutz</a> <a href="https://baro-reifen.de/impressum/">Impressum</a></p>
                     </div>
                 </div>
                 <div class="col-xl-6 col-md-6 col-sm-12">
                     <div class="payment-card-bottom">
-                        <ul>
-                            <li>
-                                <a href="#"><img src="{{asset('assets/images/icon/visa.png')}}" alt=""></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="{{asset('assets/images/icon/mastercard.png')}}" alt=""></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="{{asset('assets/images/icon/paypal.png')}}" alt=""></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="{{asset('assets/images/icon/american-express.png')}}" alt=""></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="{{asset('assets/images/icon/discover.png')}}" alt=""></a>
-                            </li>
-                        </ul>
+
                     </div>
                 </div>
             </div>

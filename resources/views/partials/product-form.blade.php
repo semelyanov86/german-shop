@@ -18,7 +18,7 @@
                             <div class="product-wrapper-grid">
                                 <div class="row">
                                     @foreach($products as $product)
-                                    <div class="col-lg-4 col-md-6 col-grid-box">
+                                    <div class="col-xl-4 col-lg-6 col-grid-box">
                                         <div class="product-box">
                                             <div class="img-wrapper">
                                                 <div class="front">
@@ -28,7 +28,7 @@
                                             <div class="product-detail">
                                                 <div class="mt-2">
 {{--                                                    <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></div>--}}
-                                                    <h6 style="margin-top:30px">{{ $product->name }}</h6>
+                                                    <h6 style="min-height:60px;margin-top:40px">{{ $product->name }}</h6>
                                                     <div class="row">
                                                         <div class="product-features">
                                                             <h5>dB: <i>{{$product->db}}</i> Rollwiderstand: <i>{{$product->rolling}}</i> Nasshaftung: <i>{{$product->wet}}</i> Gerauschem: <i>{{$product->gera}}</i></h5>
@@ -60,7 +60,7 @@
                                                     </div>
                                                     <div class="container mt-2">
                                                         <div class="row">
-                                                            <div class="col-4">
+                                                            <div class="col-3">
                                                                 <h5>ab 8 Stck</h5>
                                                             </div>
                                                             <div class="col-3">
@@ -74,14 +74,14 @@
                                                                 </div>
 
                                                             </div>
-                                                            <div class="col-2">
+                                                            <div class="col-3">
                                                                 <h5 id="total-{{$product->id}}-price8" class="td-color">0,00</h5>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="container mt-2">
                                                         <div class="row">
-                                                            <div class="col-4">
+                                                            <div class="col-3">
                                                                 <h5>ab 12 Stck</h5>
                                                             </div>
                                                             <div class="col-3">
@@ -95,7 +95,7 @@
                                                                 </div>
 
                                                             </div>
-                                                            <div class="col-2">
+                                                            <div class="col-3">
                                                                 <h5 id="total-{{$product->id}}-price12" class="td-color">0,00</h5>
                                                             </div>
                                                         </div>

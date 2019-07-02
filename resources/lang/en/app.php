@@ -65,7 +65,8 @@ return [
     'adv3' => 'festival offer',
     'adv33' => 'new online special festival offer',
     'adv4' => 'online payment',
-    'adv44' => 'new online special festival offer'
+    'adv44' => 'new online special festival offer',
+    'netto' => 'Zwinschensumme netto'
     
 
 ];
