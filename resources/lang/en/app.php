@@ -13,12 +13,12 @@ return [
     |
     */
 
-    'Call' => 'Bitte rufen Sie uns an: ',
+    'Call' => '',
     'showing' => 'Produkte ansehen',
     'products-page' => 'Produkte pro Site',
     'sorting' => 'Sortieren',
     'products' => 'Produkte',
-    'your-total' => 'Zwischesumme netto: ',
+    'your-total' => 'Zwischensumme netto: ',
     'email' => 'E-Mail* (Pflichtfeld)',
     'phone' => 'Telefone',
     'name' => 'Firmenname / Name',
@@ -34,7 +34,7 @@ return [
     'address' => 'Adress',
     'city' => 'Stadt',
     'zip' => 'Postletzeil',
-    'same' => 'The same as usual',
+    'same' => 'Versandadresse gleich Rechnungsadresse',
     'savings' => 'Sie sparen: ',
     'placeholder-email' => 'E-Mail eingeben',
     'placeholder-kudden' => 'Kundennummer eingeben, Versandadresse gleich Rechnungadresse ',
@@ -51,13 +51,21 @@ return [
     'date' => 'Datum',
     'total' => 'Gesamt brutto:',
     'shipping-address' => 'Versandaddresse:',
-    'payment-method' => 'Payment Method',
-    'delivery-date' => 'expected date of delivery',
+    'payment-method' => 'Bezahlung:',
+    'delivery-date' => 'Geschätzte Ankunftszeit der Lieferung',
     'price' => 'Preis',
     'product-name' => 'Produkt',
     'agb' => 'AGB und Datenschutzerklärung akzeptieren',
     'order-processed' => 'Order Is Successfully Processsed And Your Order Is On The Way',
-    'info' => 'Additional info'
+    'info' => 'Zusatzinfo',
+    'adv1' => 'free shipping',
+    'adv12' => 'free shipping world wide',
+    'adv2' => '24 X 7 service',
+    'adv22' => 'online service for 24 X 7',
+    'adv3' => 'festival offer',
+    'adv33' => 'new online special festival offer',
+    'adv4' => 'online payment',
+    'adv44' => 'new online special festival offer'
     
 
 ];
