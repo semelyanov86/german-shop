@@ -26,7 +26,8 @@ class HomeController extends Controller
         $description = $pages[1]->meta_description;
         $keywords = $pages[1]->meta_keywords;
         $products = Product::where('active', 1)->paginate(20);
-        return view('welcome', compact('page_title', 'sliders', 'pages', 'description', 'keywords', 'products'));
+        $order = new Order();
+        return view('welcome', compact('page_title', 'sliders', 'pages', 'description', 'keywords', 'products', 'order'));
     }
 
     public function edit($id)
