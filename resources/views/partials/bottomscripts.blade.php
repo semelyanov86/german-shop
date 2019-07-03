@@ -29,6 +29,9 @@
 <!-- Theme js-->
 <script src="{{ mix('js/script.js') }}" ></script>
 
+<!-- Countdown Plugin js-->
+<script src="{{asset('assets/js/jquery.time-to.min.js')}}" ></script>
+
 
 <script>
     $(window).on('load',function(){
@@ -42,5 +45,20 @@
         document.getElementById("search-overlay").style.display = "none";
     }
     $('footer').footerReveal();
+	
+	//Countdown
+	
+	$('head').append("<link rel=\"stylesheet\" type=\"text/css\" href=\"{{asset('assets/css/countdown.css')}}\" media=\"screen\">");
+	var userTime = document.getElementById('timeInput').value;
+	var userArr = userTime.split('-');
+	$('#countdown-timer').timeTo({
+      timeTo: new Date(userArr[0], userArr[1], userArr[2]),
+      displayDays: 2,
+      theme: "black",
+      displayCaptions: true,
+      fontSize: 34,
+      captionSize: 14,
+      lang: 'de'
+    });
 
 </script>

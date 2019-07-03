@@ -31,7 +31,7 @@
                                                     <h6 style="min-height:60px;margin-top:40px">{{ $product->name }}</h6>
                                                     <div class="row">
                                                         <div class="product-features">
-                                                            <h5>dB: <i>{{$product->db}}</i> Rollwiderstand: <i>{{$product->rolling}}</i> Nasshaftung: <i>{{$product->wet}}</i> Gerauschem: <i>{{$product->gera}}</i></h5>
+                                                            <h5>Rollwiderstand: <i>{{$product->rolling}}</i> Nasshaftung: <i>{{$product->wet}}</i> Gerauschem: <i>{{$product->gera}}</i> dB: <i>{{$product->db}}</i></h5>
                                                         </div>
                                                     </div>
 
@@ -39,7 +39,7 @@
 {{--                                                    <h4>{{ $product->price }}</h4>--}}
                                                     <div class="container mt-2">
                                                         <div class="row">
-                                                            <div class="col-4">
+                                                            <div class="col-3">
                                                                 <h5>ab 4 Stck</h5>
                                                             </div>
                                                             <div class="col-3">
@@ -53,7 +53,7 @@
                                                                 </div>
 
                                                             </div>
-                                                            <div class="col-2">
+                                                            <div class="col-3">
                                                                 <h5 id="total-{{$product->id}}-price" class="td-color">0,00</h5>
                                                             </div>
                                                         </div>
@@ -101,10 +101,10 @@
                                                         </div>
                                                         <div class="mt-2">
                                                             <div class="row">
-                                                                <div class="col-4">
+                                                                <div class="col-3">
                                                                     <h4>Tyre24</h4>
                                                                 </div>
-                                                                <div class="col-4">
+                                                                <div class="col-3">
                                                                     <input type="hidden" id="{{$product->id}}tyre24" value="{{$product->tyre24}}">
                                                                     <h4>{{ $product->presentPrice('tyre24') }}</h4>
                                                                 </div>
