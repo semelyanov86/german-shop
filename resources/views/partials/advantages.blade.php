@@ -1,4 +1,4 @@
-<div class="col-lg-3 col-sm-6 service-block">
+<div class="col-xl-4 col-lg-8 service-block">
     <div class="media">
         <div class="media-body">
             <h4>Time is coming!</h4>

@@ -51,7 +51,7 @@
 	$('head').append("<link rel=\"stylesheet\" type=\"text/css\" href=\"{{asset('assets/css/countdown.css')}}\" media=\"screen\">");
 	var userTime = document.getElementById('timeInput').value;
 	var userArr = userTime.split('-');
-	$('#countdown-timer').timeTo({
+	$('#countdown-timer').css({'padding-bottom':'50px'}).timeTo({
       timeTo: new Date(userArr[0], userArr[1], userArr[2]),
       displayDays: 2,
       theme: "black",
