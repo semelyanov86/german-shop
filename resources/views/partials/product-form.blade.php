@@ -197,14 +197,25 @@
                                                 </div>
                                             @endif
                                     </div>
-                                    <div class="form-group">
-                                        <label for="inputAddress">{{trans('app.address')}}</label>
-                                        <input type="text" class="form-control @if($errors->has('street')) is-invalid @endif" id="inputAddress" name="street" placeholder="{{trans('app.placeholder-street')}}" value="{{old('street')}}">
-                                        @if($errors->has('street'))
-                                            <div class="invalid-feedback">
-                                                {{ $errors->first('street') }}
-                                            </div>
-                                        @endif
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="inputAddress">{{trans('app.address')}}</label>
+                                            <input type="text" class="form-control @if($errors->has('street')) is-invalid @endif" id="inputAddress" name="street" placeholder="{{trans('app.placeholder-street')}}" value="{{old('street')}}">
+                                            @if($errors->has('street'))
+                                                <div class="invalid-feedback">
+                                                    {{ $errors->first('street') }}
+                                                </div>
+                                            @endif
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="zusatzadress">{{trans('app.zusatzadress')}}</label>
+                                            <input type="text" class="form-control @if($errors->has('zusatzadress')) is-invalid @endif" id="zusatzadress" name="zusatzadress" placeholder="{{trans('app.placeholder-zusatzadress')}}" value="{{old('zusatzadress')}}">
+                                            @if($errors->has('zusatzadress'))
+                                                <div class="invalid-feedback">
+                                                    {{ $errors->first('zusatzadress') }}
+                                                </div>
+                                            @endif
+                                        </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-8">

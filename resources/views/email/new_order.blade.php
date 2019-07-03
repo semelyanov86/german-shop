@@ -172,7 +172,7 @@
                     <td class="user-info" style="font-size: 13px; font-weight: 400; color: #444444; letter-spacing: 0.2px;width: 50%;">
                         <h5 style="font-size: 16px;font-weight: 500;color: #000; line-height: 16px; padding-bottom: 13px; border-bottom: 1px solid #e6e8eb; letter-spacing: -0.65px; margin-top:0; margin-bottom: 13px;">{{trans('app.shipping-address')}}</h5>
                         @if($order->other_address)
-                        <p style="text-align: left;font-weight: normal; font-size: 14px; color: #000000;line-height: 21px;    margin-top: 0;">{{$order->name}},<br> {{$order->street}} <br>{{$order->city}}, {{$order->postindex}}</p>
+                        <p style="text-align: left;font-weight: normal; font-size: 14px; color: #000000;line-height: 21px;    margin-top: 0;">{{$order->name}},<br> {{$order->street}} <br> {{$order->zusatzadress}} <br>{{$order->city}}, {{$order->postindex}}</p>
                             @else
                             <p style="text-align: left;font-weight: normal; font-size: 14px; color: #000000;line-height: 21px;    margin-top: 0;">The same</p>
                             @endif

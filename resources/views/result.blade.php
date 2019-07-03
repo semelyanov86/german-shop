@@ -61,6 +61,7 @@
                             @if($order->other_address)
                             <li>{{$order->name}}</li>
                             <li>{{$order->street}}</li>
+                            <li>{{$order->zusatzadress}}</li>
                             <li>{{$order->city}}, {{$order->postindex}}</li>
                             <li>{{trans('app.kuddennr')}}: {{$order->kuddennr}}</li>
                                 @else

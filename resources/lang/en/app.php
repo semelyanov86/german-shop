@@ -35,7 +35,7 @@ return [
     'city' => 'Stadt',
     'zip' => 'Postletzeil',
     'same' => 'Versandadresse gleich Rechnungsadresse',
-    'savings' => 'Sie sparen: ',
+    'savings' => 'Sie sparen im Vergleich zu Tyre24: ',
     'placeholder-email' => 'E-Mail eingeben',
     'placeholder-kudden' => 'Kundennummer eingeben, Versandadresse gleich Rechnungadresse ',
     'placeholder-street' => 'Strasse, Hausnummer',
@@ -66,7 +66,9 @@ return [
     'adv33' => 'new online special festival offer',
     'adv4' => 'online payment',
     'adv44' => 'new online special festival offer',
-    'netto' => 'Zwinschensumme netto'
+    'netto' => 'Zwinschensumme netto',
+    'zusatzadress' => 'zusatzadress',
+    'placeholder-zusatzadress' => 'zusatzadress'
     
 
 ];
