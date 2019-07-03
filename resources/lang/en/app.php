@@ -68,7 +68,8 @@ return [
     'adv44' => 'new online special festival offer',
     'netto' => 'Zwinschensumme netto',
     'zusatzadress' => 'zusatzadress',
-    'placeholder-zusatzadress' => 'zusatzadress'
+    'placeholder-zusatzadress' => 'zusatzadress',
+    'empty-quantity' => 'Please, select at least one product'
     
 
 ];

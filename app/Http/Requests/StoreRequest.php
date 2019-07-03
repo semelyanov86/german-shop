@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\Checkquantity;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreRequest extends FormRequest
@@ -26,7 +27,7 @@ class StoreRequest extends FormRequest
         return [
             'email' => 'required|email',
             'kuddennr' => 'required|numeric|min:5',
-            'quantity' => 'required|array',
+            'quantity' => ['required', 'array', 'min:1', new Checkquantity()],
             'name' => 'required_if:other_address,==,on',
             'street' => 'required_if:other_address,==,on',
             'city' => 'required_if:other_address,==,on',

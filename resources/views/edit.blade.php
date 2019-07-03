@@ -26,6 +26,13 @@
                                                         @include('partials.product-box')
                                                     </div>
                                                 @endforeach
+                                                    @if($errors->has('quantity'))
+                                                        <div class="container text-center">
+                                                            <h3 class="mt-3 text-danger text-center">
+                                                                {{$errors->first('quantity')}}
+                                                            </h3>
+                                                        </div>
+                                                    @endif
 {{--                                                <div class="container">
                                                     <h2 class="mt-3">{{trans('app.your-total')}} € @{{ sum }}</h2>
                                                     <h3 class="mt-2">{{trans('app.savings')}} € @{{ saving }}</h3>
