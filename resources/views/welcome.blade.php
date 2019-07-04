@@ -27,7 +27,7 @@
                         </div>
                             @else
                             <div class="tools-parts" id="tool-3">
-                                <img src="{{ asset('assets/images/tools/1.png') }}" class="img-fluid blur-up lazyload" alt="">
+                                <img src="{{ '/storage/' . json_decode(html_entity_decode($slider->add_images, ENT_QUOTES), true)[0] }}" class="img-fluid blur-up lazyload" alt="">
                             </div>
                             @endif
                     </div>
