@@ -1,7 +1,7 @@
 <div class="col-xl-4 col-lg-8 service-block">
     <div class="media">
         <div class="media-body">
-            <h4>Time is coming!</h4>
+            <h4>{{trans('app.coming')}}</h4>
             <input type="hidden" id="timeInput" value="{{setting('site.timer')}}">
             <div id="countdown-timer"></div>
         </div>

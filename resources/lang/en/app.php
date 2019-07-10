@@ -69,7 +69,8 @@ return [
     'netto' => 'Zwinschensumme netto',
     'zusatzadress' => 'Zusatzadress',
     'placeholder-zusatzadress' => 'Zusatzadress',
-    'empty-quantity' => 'Please, select at least one product'
+    'empty-quantity' => 'Please, select at least one product',
+    'coming' => 'Angebot beendet nach'
     
 
 ];

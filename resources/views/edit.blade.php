@@ -33,10 +33,10 @@
                                                             </h3>
                                                         </div>
                                                     @endif
-{{--                                                <div class="container">
+                                                <div class="container">
                                                     <h2 class="mt-3">{{trans('app.your-total')}} € @{{ sum }}</h2>
                                                     <h3 class="mt-2">{{trans('app.savings')}} € @{{ saving }}</h3>
-                                                </div>--}}
+                                                </div>
                                             </div>
                                         </div>
                                         @if($products->count() > 24)

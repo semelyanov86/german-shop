@@ -49255,6 +49255,20 @@ var app = new Vue({
         minimumFractionDigits: 2
       });
     }
+  },
+  mounted: function mounted() {
+    var inputs = document.querySelectorAll('.input-number');
+
+    for (var i = 0; i < inputs.length; i++) {
+      var name = inputs[i].getAttribute('data-type') + inputs[i].getAttribute('data-productid');
+
+      if (this.$refs[name]) {
+        this.$refs[name].click();
+      } else {
+        console.log('ref with name not found: ' + name, inputs[i]);
+      }
+    } // document.querySelectorAll('.input-number')[1].value = '10';
+
   }
 });
 

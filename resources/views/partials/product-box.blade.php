@@ -27,7 +27,7 @@
                     <div class="col-3">
                         <div class="qty-box">
                             <div class="input-group">
-                                <input type="number" name="quantity[{{$product->id}}][price]" class="form-control input-number" @if($product->pivot && $product->pivot->type == 'price') value="{{$product->pivot->quantity}}" @else value="" @endif min="4" max="7" data-price="{{$product->price}}" data-productid="{{$product->id}}" data-type="price" v-on:change="calcPrices">
+                                <input type="number" name="quantity[{{$product->id}}][price]" class="form-control input-number" @if($product->pivot && $product->pivot->type == 'price') value="{{$product->pivot->quantity}}" @else value="" @endif min="4" max="7" data-price="{{$product->price}}" data-productid="{{$product->id}}" data-type="price" v-on:change="calcPrices" ref="price{{$product->id}}" v-on:click="calcPrices">
                             </div>
                         </div>
 
@@ -48,7 +48,7 @@
                     <div class="col-3">
                         <div class="qty-box">
                             <div class="input-group">
-                                <input type="number" name="quantity[{{$product->id}}][price8]" class="form-control input-number" @if($product->pivot && $product->pivot->type == 'price8') value="{{$product->pivot->quantity}}" @else value="" @endif min="8" max="11" data-price="{{$product->price8}}" data-productid="{{$product->id}}" data-type="price8" v-on:change="calcPrices">
+                                <input type="number" name="quantity[{{$product->id}}][price8]" class="form-control input-number" @if($product->pivot && $product->pivot->type == 'price8') value="{{$product->pivot->quantity}}" @else value="" @endif min="8" max="11" data-price="{{$product->price8}}" data-productid="{{$product->id}}" data-type="price8" v-on:change="calcPrices" ref="price8{{$product->id}}" v-on:click="calcPrices">
                             </div>
                         </div>
 
@@ -69,7 +69,7 @@
                     <div class="col-3">
                         <div class="qty-box">
                             <div class="input-group">
-                                <input type="number" name="quantity[{{$product->id}}][price12]" class="form-control input-number" @if($product->pivot && $product->pivot->type == 'price12') value="{{$product->pivot->quantity}}" @else value="" @endif min="12" max="100" data-price="{{ $product->price12 }}" data-productid="{{$product->id}}" data-type="price12" v-on:change="calcPrices">
+                                <input type="number" name="quantity[{{$product->id}}][price12]" class="form-control input-number" @if($product->pivot && $product->pivot->type == 'price12') value="{{$product->pivot->quantity}}" @else value="" @endif min="12" max="100" data-price="{{ $product->price12 }}" data-productid="{{$product->id}}" data-type="price12" v-on:change="calcPrices" ref="price12{{$product->id}}" v-on:click="calcPrices">
                             </div>
                         </div>
 

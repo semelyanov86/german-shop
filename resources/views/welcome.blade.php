@@ -43,7 +43,7 @@
     <section class="banner-padding absolute-banner pb-0 tools-service">
         <div class="container absolute-bg">
             <div class="service p-0 ">
-                <div class="row">
+                <div class="row d-flex justify-content-center">
                     @include('partials.advantages')
                 </div>
             </div>

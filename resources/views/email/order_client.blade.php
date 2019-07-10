@@ -145,7 +145,7 @@
                 @foreach($order->products as $product)
                 <tr>
                     <td>
-                        <img src="/storage/{{$product->image}}" alt="" width="80">
+                        <img src="{{asset('storage/' . $product->image)}}" alt="" width="80">
                     </td>
                     <td valign="top" style="padding-left: 15px;">
                         <h5 style="margin-top: 15px;">{{$product->name}}</h5>
