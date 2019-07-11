@@ -8,13 +8,13 @@
                         <form action="{{route('store.order')}}" method="post">
                             @csrf()
                         <div class="collection-product-wrapper">
-                            {{--<div class="product-top-filter">
+                            <div class="product-top-filter">
                                 <div class="row">
                                     <div class="col-12">
                                         @include('partials.product-filter')
                                     </div>
                                 </div>
-                            </div>--}}
+                            </div>
                             <div class="product-wrapper-grid">
                                 <div class="row">
                                     @foreach($products as $product)
@@ -31,6 +31,7 @@
                                         @endif
                                     <div class="container mt-2">
                                         <h2 class="mt-3">{{trans('app.your-total')}} € @{{ sum }}</h2>
+                                        <h3 class="mt-3">{{trans('app.your-discount')}} € @{{ discount }}</h3>
                                         <h3 class="mt-2">{{trans('app.savings')}} € @{{ saving }}</h3>
                                     </div>
                                 </div>

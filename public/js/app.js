@@ -49220,7 +49220,9 @@ var app = new Vue({
     },
     checked: false,
     sum: 0,
-    saving: 0
+    saving: 0,
+    counting: 0,
+    discount: 0
   },
   methods: {
     calcPrices: function calcPrices(e) {
@@ -49234,17 +49236,23 @@ var app = new Vue({
       curModel.innerText = '€' + total.toLocaleString('de-DE', {
         minimumFractionDigits: 2
       });
-      this.total[curid + type] = [total, tyre24];
+      this.total[curid + type] = [total, tyre24, value];
       this.totalSum();
     },
     totalSum: function totalSum() {
       var sum = 0;
       var saving = 0;
+      var counting = 0;
+      var discounting = 0;
 
       for (var el in this.total) {
         if (this.total.hasOwnProperty(el)) {
           sum += parseFloat(this.total[el][0]);
           saving += this.total[el][1] - parseFloat(this.total[el][0]);
+
+          if (this.total[el][2]) {
+            counting += parseFloat(this.total[el][2]);
+          }
         }
       }
 
@@ -49254,6 +49262,14 @@ var app = new Vue({
       this.saving = saving.toLocaleString('de-DE', {
         minimumFractionDigits: 2
       });
+      this.counting = counting;
+
+      if (this.counting > 40) {
+        discounting = sum * 0.01;
+        this.discount = discounting.toLocaleString('de-DE', {
+          minimumFractionDigits: 2
+        });
+      }
     }
   },
   mounted: function mounted() {

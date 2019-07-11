@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 return [
 
@@ -70,7 +70,8 @@ return [
     'zusatzadress' => 'Zusatzadress',
     'placeholder-zusatzadress' => 'Zusatzadress',
     'empty-quantity' => 'Please, select at least one product',
-    'coming' => 'Angebot beendet nach'
+    'coming' => 'Angebot endet in',
+    'your-discount' => 'Your Discount: '
     
 
 ];

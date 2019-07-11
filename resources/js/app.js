@@ -36,7 +36,9 @@ const app = new Vue({
         total: {0 : [0, 0]},
         checked: false,
         sum: 0,
-        saving: 0
+        saving: 0,
+        counting: 0,
+        discount: 0
     },
     methods: {
         calcPrices: function (e) {
@@ -48,20 +50,30 @@ const app = new Vue({
             let tyre24 = document.getElementById(curid + 'tyre24').value * value;
             let curModel = document.getElementById('total-' + curid + '-' + type);
             curModel.innerText = '€' + total.toLocaleString('de-DE', {minimumFractionDigits: 2});
-            this.total[curid + type] = [total, tyre24];
+            this.total[curid + type] = [total, tyre24, value];
             this.totalSum();
         },
         totalSum: function () {
             var sum = 0;
             var saving = 0;
+            var counting = 0;
+            var discounting = 0;
             for( var el in this.total ) {
                 if( this.total.hasOwnProperty( el ) ) {
                     sum += parseFloat( this.total[el][0] );
                     saving += this.total[el][1] - parseFloat( this.total[el][0] );
+                    if (this.total[el][2]){
+                        counting += parseFloat(this.total[el][2]);
+                    }
                 }
             }
             this.sum = sum.toLocaleString('de-DE', {minimumFractionDigits: 2});
             this.saving = saving.toLocaleString('de-DE', {minimumFractionDigits: 2});
+            this.counting = counting;
+            if (this.counting > 40) {
+                discounting = sum * 0.01;
+                this.discount = discounting.toLocaleString('de-DE', {minimumFractionDigits: 2});
+            }
         },
     },
     mounted: function() {

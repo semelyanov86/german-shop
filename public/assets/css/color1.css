@@ -93,7 +93,6 @@ h3 {
 
 h4 {
   font-size: 18px;
-  text-transform: capitalize;
   font-weight: 400;
   letter-spacing: 0.03em;
   line-height: 1;
@@ -2485,7 +2484,6 @@ header.video-header .top-header .header-dropdown li a i {
 }
 .service-block h4 {
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 0.03em;
 }
 .service-block p {
