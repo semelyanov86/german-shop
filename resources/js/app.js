@@ -38,7 +38,7 @@ const app = new Vue({
         sum: 0,
         saving: 0,
         counting: 0,
-        discount: 0
+        discount: '0,00'
     },
     methods: {
         calcPrices: function (e) {

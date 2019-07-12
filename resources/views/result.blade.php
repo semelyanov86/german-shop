@@ -16,18 +16,24 @@
                     <h3>{{ $pages[3]->excerpt }}</h3>
                     @foreach($products as $product)
                     <div class="row product-order-detail">
-                        <div class="col-3"><img src="/storage/{{$product->image}}" alt="" class="img-fluid blur-up lazyload"></div>
-                        <div class="col-3 order_detail">
+{{--                        <div class="col-3 order_detail align-items-start"><img src="/storage/{{$product->image}}" alt="" class="img-fluid blur-up lazyload"></div>--}}
+                        <div class="col-3 order_detail align-items-start">
+                            <div>
+                                <h4>{{trans('app.firma')}}</h4>
+                                <h5>{{$product->firma}}</h5>
+                            </div>
+                        </div>
+                        <div class="col-3 order_detail align-items-start">
                             <div>
                                 <h4>{{trans('app.product-name')}}</h4>
                                 <h5>{{$product->name}}</h5></div>
                         </div>
-                        <div class="col-3 order_detail">
+                        <div class="col-3 order_detail align-items-start">
                             <div>
                                 <h4>{{trans('app.quantity')}}</h4>
                                 <h5>{{$product->pivot->quantity}}</h5></div>
                         </div>
-                        <div class="col-3 order_detail">
+                        <div class="col-3 order_detail align-items-start">
                             <div>
                                 <h4>{{trans('app.price')}}</h4>
                                 <h5>{{$product->presentPrice($product->pivot->type)}}</h5></div>
@@ -50,9 +56,9 @@
                     <div class="col-sm-6">
                         <h4>{{trans('app.summary')}}</h4>
                         <ul class="order-detail">
-                            <li>{{trans('app.order')}} ID: {{$order->id}}</li>
+                            <li>ID: {{$order->id}}</li>
                             <li>{{trans('app.order')}} {{trans('app.date')}}: {{$order->created_at}}</li>
-                            <li>{{trans('app.order')}} {{trans('app.total')}}: {{$order->presentTotal($order->final_total)}}</li>
+                            <li>{{trans('app.total')}}: {{$order->presentTotal($order->final_total)}}</li>
                         </ul>
                     </div>
                     <div class="col-sm-6">
@@ -85,6 +91,9 @@
                 <a href="{{route('store.edit', $order->id)}}" role="button" class="btn btn-secondary">{{trans('app.edit')}}</a>
                 <a href="{{route('store.place', $order->id)}}" role="button" class="btn btn-success">{{trans('app.place')}}</a>
             </div>
+                <div class="mt-2">
+                    <a href="http://baro-reifen.de">{{trans('app.gelesen')}}</a>
+                </div>
                 @else
                 <div class="col-md-12 mt-2">
                 <p>{{trans('app.already-placed')}}</p>
