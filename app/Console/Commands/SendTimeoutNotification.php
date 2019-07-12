@@ -47,7 +47,7 @@ class SendTimeoutNotification extends Command
         $now = Carbon::now();
 
         $diff = $date->diffInHours($now);
-        if ($diff < 5) {
+        if ($diff < 3) {
             $admin_user = User::whereHas('role', function ($query){
                 $query->where('id', 1);
             })->first();
