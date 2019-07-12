@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/images/favicon/1.png" type="image/x-icon">
     <link rel="shortcut icon" href="assets/images/favicon/1.png" type="image/x-icon">
-    <title>Thanks for your order! </title>
+    <title>Vielen Dank für Ihre Bestellung! </title>
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
 
     <style type="text/css">
@@ -111,9 +111,9 @@
                 </tr>
                 <tr>
                     <td>
-                        <p style="font-size: 14px;"><b>Hi {{$order->name}},</b></p>
+                        <p style="font-size: 14px;"><b>Guten Tag {{$order->name}},</b></p>
                         <p style="font-size: 14px;">{{trans('app.order-processed')}},</p>
-                        <p style="font-size: 14px;">{{trans('app.order')}} ID : {{$order->id}},</p>
+                        <p style="font-size: 14px;">{{trans('app.order')}} Nr. : {{$order->id}},</p>
                         <p style="font-size: 14px;">{{trans('app.kuddennr')}} : {{$order->kuddennr}},</p>
                         <p style="font-size: 14px;">{{trans('app.info')}} : {{$order->info}}</p>
                     </td>
@@ -124,12 +124,12 @@
                 <tbody>
                 <tr>
                     <td style="background-color: #fafafa;border: 1px solid #ddd;padding: 15px;letter-spacing: 0.3px;width: 50%;">
-                        <h5 style="font-size: 16px; font-weight: 600;color: #000; line-height: 16px; padding-bottom: 13px; border-bottom: 1px solid #e6e8eb; letter-spacing: -0.65px; margin-top:0; margin-bottom: 13px;">Your Shipping Address</h5>
+                        <h5 style="font-size: 16px; font-weight: 600;color: #000; line-height: 16px; padding-bottom: 13px; border-bottom: 1px solid #e6e8eb; letter-spacing: -0.65px; margin-top:0; margin-bottom: 13px;">Ihre Lieferadresse</h5>
                         <p style="text-align: left;font-weight: normal; font-size: 14px; color: #000000;line-height: 21px;    margin-top: 0;">268 Cambridge Lane New Albany,<br> IN 47150268 Cambridge Lane <br>New Albany, IN 47150</p>
                     </td>
                     <td><img src="assets/images/email-temp/space.jpg" alt=" " height="25" width="30"></td>
                     <td style="background-color: #fafafa;border: 1px solid #ddd;padding: 15px;letter-spacing: 0.3px;width: 50%;">
-                        <h5 style="font-size: 16px;font-weight: 600;color: #000; line-height: 16px; padding-bottom: 13px; border-bottom: 1px solid #e6e8eb; letter-spacing: -0.65px; margin-top:0; margin-bottom: 13px;">Your Billing Address:</h5>
+                        <h5 style="font-size: 16px;font-weight: 600;color: #000; line-height: 16px; padding-bottom: 13px; border-bottom: 1px solid #e6e8eb; letter-spacing: -0.65px; margin-top:0; margin-bottom: 13px;">Ihre Rechnungsadresse:</h5>
                         <p style="text-align: left;font-weight: normal; font-size: 14px; color: #000000;line-height: 21px;    margin-top: 0;">268 Cambridge Lane New Albany,<br> IN 47150268 Cambridge Lane <br>New Albany, IN 47150</p>
                     </td>
                 </tr>
@@ -138,14 +138,15 @@
             <table class="order-detail" border="0" cellpadding="0" cellspacing="0"  align="left" style="width: 100%;    margin-bottom: 50px;">
                 <tr align="left">
                     <th>{{trans('app.products')}}</th>
-                    <th style="padding-left: 15px;">DESCRIPTION</th>
+                    <th style="padding-left: 15px;">Details</th>
                     <th>{{trans('app.quantity')}}</th>
-                    <th>PRICE </th>
+                    <th>Preis </th>
                 </tr>
                 @foreach($order->products as $product)
                 <tr>
-                    <td>
-                        <img src="{{asset('storage/' . $product->image)}}" alt="" width="80">
+                    <td valign="top" style="padding-left: 15px;">
+                        <h5 style="margin-top: 15px;">{{$product->firma}}</h5>
+                        {{--                        <img src="{{asset('storage/' . $product->image)}}" alt="" width="80">--}}
                     </td>
                     <td valign="top" style="padding-left: 15px;">
                         <h5 style="margin-top: 15px;">{{$product->name}}</h5>
@@ -160,7 +161,7 @@
                 @endforeach
                 <tr class="pad-left-right-space ">
                     <td class="m-t-5" colspan="2" align="left">
-                        <p style="font-size: 14px;">Subtotal : </p>
+                        <p style="font-size: 14px;">Zwischensumme : </p>
                     </td>
                     <td class="m-t-5" colspan="2" align="right">
                         <b style>{{$order->presentTotal($total)}}</b>
@@ -175,7 +176,7 @@
                 </tr>
                 <tr class="pad-left-right-space">
                     <td colspan="2" align="left">
-                        <p style="font-size: 14px;">Discount :</p>
+                        <p style="font-size: 14px;">Rabatt :</p>
                     </td>
                     <td colspan="2" align="right">
                         <b> {{$order->presentTotal($order->discount)}}</b>
@@ -200,7 +201,7 @@
     <tr>
         <td style="padding: 30px;">
             <div>
-                <h4 class="title" style="margin:0;text-align: center;">Follow us</h4>
+                <h4 class="title" style="margin:0;text-align: center;">Folgen Sie uns</h4>
             </div>
             <table border="0" cellpadding="0" cellspacing="0" class="footer-social-icon" align="center" class="text-center" style="margin-top:20px;">
                 <tr>

@@ -2485,6 +2485,8 @@ header.video-header .top-header .header-dropdown li a i {
 .service-block h4 {
   font-weight: 700;
   letter-spacing: 0.03em;
+  text-transform:uppercase;
+  text-align:center
 }
 .service-block p {
   text-transform: capitalize;
@@ -13513,7 +13515,6 @@ body.dark {
   font-weight: 400;
   line-height: 23px;
   text-decoration: none;
-  text-transform: uppercase;
   padding-top: 42px;
   padding-bottom: 42px;
   letter-spacing: 0.07em;
