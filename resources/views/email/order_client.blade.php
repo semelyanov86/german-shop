@@ -106,7 +106,7 @@
             <table align="left" border="0" cellpadding="0" cellspacing="0" style="text-align: left;" width="100%">
                 <tr>
                     <td style="text-align: center;">
-                        <img src="assets/images/email-temp/delivery-2.png" alt="" style=";margin-bottom: 30px;">
+                        <img src="{{asset('assets/images/email-temp/delivery-2.png')}}" alt="" style=";margin-bottom: 30px;">
                     </td>
                 </tr>
                 <tr>
@@ -135,6 +135,13 @@
                 </tr>
                 </tbody>
             </table>--}}
+            <table border="0" cellpadding="0" cellspacing="0" >
+                <tr>
+                    <td>
+                        <h2 class="title">YOUR ORDER DETAILS</h2>
+                    </td>
+                </tr>
+            </table>
             <table class="order-detail" border="0" cellpadding="0" cellspacing="0"  align="left" style="width: 100%;    margin-bottom: 50px;">
                 <tr align="left">
                     <th>{{trans('app.products')}}</th>
@@ -151,7 +158,7 @@
                     <td valign="top" style="padding-left: 15px;">
                         <h5 style="margin-top: 15px;">{{$product->name}}</h5>
                     </td>
-                    <td valign="top" style="padding-left: 15px;">
+                    <td valign="top" style="padding-left: 40px;">
                         <h5 style="font-size: 14px; color:#444;margin-top: 10px;"><span>{{$product->pivot->quantity}}</span></h5>
                     </td>
                     <td valign="top" style="padding-left: 15px;">
