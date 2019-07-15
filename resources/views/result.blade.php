@@ -9,7 +9,7 @@
 
 <!-- order-detail section start -->
 <section class="section-b-space">
-    <div class="container @if($order->placed < 1) mt-5 pt-5 @endif">
+    <div id="app" class="container @if($order->placed < 1) mt-5 pt-5 @endif">
         <div class="row">
             <div class="col-lg-6">
                 <div class="product-order">
@@ -56,7 +56,7 @@
                     <div class="col-sm-6">
                         <h4>{{trans('app.summary')}}</h4>
                         <ul class="order-detail">
-                            <li>ID: {{$order->id}}</li>
+                            <li>Nr: {{$order->id}}</li>
                             <li>{{trans('app.order')}} {{trans('app.date')}}: {{$order->created_at}}</li>
                             <li>{{trans('app.total')}}: {{$order->presentTotal($order->final_total)}}</li>
                         </ul>
@@ -86,10 +86,16 @@
                     </div>
                 </div>
             </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" v-model="agb" id="agb">
+                <label class="form-check-label" for="agb">
+                    {{trans('app.agb')}}
+                </label>
+            </div>
             @if($order->placed < 1)
             <div class="col-md-12 mt-2">
                 <a href="{{route('store.edit', $order->id)}}" role="button" class="btn btn-secondary">{{trans('app.edit')}}</a>
-                <a href="{{route('store.place', $order->id)}}" role="button" class="btn btn-success">{{trans('app.place')}}</a>
+                <a href="{{route('store.place', $order->id)}}" role="button" class="btn btn-success" v-bind:class="{ 'disabled': !agb }">{{trans('app.place')}}</a>
             </div>
                 <div class="mt-2">
                     <a href="http://baro-reifen.de">{{trans('app.gelesen')}}</a>

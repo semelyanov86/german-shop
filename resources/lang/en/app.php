@@ -74,7 +74,8 @@ return [
     'coming' => 'Angebot endet in',
     'your-discount' => 'Rabatt 1% ab 40 Stck: ',
     'gelesen' => 'AGB gelesen und akzeptiren',
-    'firma' => 'Firma'
+    'firma' => 'Firma',
+    'order-details' => 'Your Details'
     
 
 ];

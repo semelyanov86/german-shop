@@ -138,7 +138,7 @@
             <table border="0" cellpadding="0" cellspacing="0" >
                 <tr>
                     <td>
-                        <h2 class="title">YOUR ORDER DETAILS</h2>
+                        <h2 class="title">{{trans('app.order-details')}}</h2>
                     </td>
                 </tr>
             </table>
