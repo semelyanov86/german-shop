@@ -35,7 +35,6 @@
 
         h5{
             color:#444;
-            text-align:left;
             font-weight:400;
         }
 
@@ -66,13 +65,13 @@
             border: 1px solid #ddd;
             border-collapse: collapse;
         }
-        table.order-detail tr:nth-child(even) {
+        /*table.order-detail tr:nth-child(even) {
             border-top:1px solid #ddd;
             border-bottom:1px solid #ddd;
         }
         table.order-detail tr:nth-child(odd) {
             border-bottom:1px solid #ddd;
-        }
+        }*/
         .pad-left-right-space{
             border: unset !important;
         }
@@ -120,6 +119,7 @@
                 </tr>
             </table>
 
+
  {{--           <table cellpadding="0" cellspacing="0" border="0" align="left" style="width: 100%;margin-top: 10px;    margin-bottom: 10px;">
                 <tbody>
                 <tr>
@@ -143,57 +143,65 @@
                 </tr>
             </table>
             <table class="order-detail" border="0" cellpadding="0" cellspacing="0"  align="left" style="width: 100%;    margin-bottom: 50px;">
-                <tr align="left">
+                <tr align="center">
                     <th>{{trans('app.products')}}</th>
-                    <th style="padding-left: 15px;">Details</th>
+                    <th>Details</th>
                     <th>{{trans('app.quantity')}}</th>
                     <th>Preis </th>
                 </tr>
                 @foreach($order->products as $product)
-                <tr>
-                    <td valign="top" style="padding-left: 15px;">
+                <tr align="center">
+                    <td valign="top">
                         <h5 style="margin-top: 15px;">{{$product->firma}}</h5>
                         {{--                        <img src="{{asset('storage/' . $product->image)}}" alt="" width="80">--}}
                     </td>
-                    <td valign="top" style="padding-left: 15px;">
+                    <td valign="top">
                         <h5 style="margin-top: 15px;">{{$product->name}}</h5>
                     </td>
-                    <td valign="top" style="padding-left: 40px;">
+                    <td valign="top">
                         <h5 style="font-size: 14px; color:#444;margin-top: 10px;"><span>{{$product->pivot->quantity}}</span></h5>
                     </td>
-                    <td valign="top" style="padding-left: 15px;">
+                    <td valign="top">
                         <h5 style="font-size: 14px; color:#444;margin-top:15px"><b>{{$product->presentPrice($product->pivot->type)}}</b></h5>
                     </td>
                 </tr>
                 @endforeach
-                <tr class="pad-left-right-space ">
-                    <td class="m-t-5" colspan="2" align="left">
-                        <p style="font-size: 14px;">Zwischensumme : </p>
+                <tr style="border-top:1px solid #ddd;" align="right">
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td class="m-t-5">
+                        <p style="font-size: 14px; padding-right:5%">Zwischensumme : </p>
                     </td>
-                    <td class="m-t-5" colspan="2" align="right">
+                    <td class="m-t-5" align="center">
                         <b style>{{$order->presentTotal($total)}}</b>
                     </td>
-                <tr class="pad-left-right-space">
-                    <td colspan="2" align="left">
-                        <p style="font-size: 14px;">{{trans('app.tax')}} :</p>
+                <tr align="right">
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>
+                        <p style="font-size: 14px; padding-right:5%">{{trans('app.tax')}} :</p>
                     </td>
-                    <td colspan="2" align="right">
+                    <td align="center">
                         <b>{{$order->presentTotal($order->tax)}}</b>
                     </td>
                 </tr>
-                <tr class="pad-left-right-space">
-                    <td colspan="2" align="left">
-                        <p style="font-size: 14px;">Rabatt :</p>
+                <tr align="right">
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>
+                        <p style="font-size: 14px; padding-right:5%">Rabatt :</p>
                     </td>
-                    <td colspan="2" align="right">
+                    <td align="center">
                         <b> {{$order->presentTotal($order->discount)}}</b>
                     </td>
                 </tr>
-                <tr class="pad-left-right-space ">
-                    <td class="m-b-5" colspan="2" align="left">
-                        <p style="font-size: 14px;">{{trans('app.total')}} :</p>
+                <tr align="right">
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td class="m-b-5">
+                        <p style="font-size: 14px; padding-right:5%">{{trans('app.total')}} :</p>
                     </td>
-                    <td class="m-b-5" colspan="2" align="right">
+                    <td class="m-b-5" align="center">
                         <b>{{$order->presentTotal($order->final_total)}}</b>
                     </td>
                 </tr>
@@ -204,7 +212,7 @@
     </tr>
     </tbody>
 </table>
-<table class="main-bg-light text-center top-0"  align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--<table class="main-bg-light text-center top-0"  align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
     <tr>
         <td style="padding: 30px;">
             <div>
@@ -235,6 +243,6 @@
             <div style="border-top: 1px solid #ddd; margin: 20px auto 0;"></div>
         </td>
     </tr>
-</table>
+</table>//-->
 </body>
 </html>

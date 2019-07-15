@@ -2,7 +2,14 @@
     {{--<div class="search-count">
         <h5>{{trans('app.showing')}} 1-24 of {{$products->count()}} {{trans('app.products')}}</h5></div>--}}
     <div class="collection-view"></div>
-    <div class="collection-grid-view"></div>
+    <div class="collection-grid-view">
+        <ul>
+            <li><img src="{{ asset('assets/images/icon/2.png') }}" alt="" class="product-2-layout-view"></li>
+            <li><img src="{{ asset('assets/images/icon/3.png') }}" alt="" class="product-3-layout-view"></li>
+            <li><img src="{{ asset('assets/images/icon/4.png') }}" alt="" class="product-4-layout-view"></li>
+            <li><img src="{{ asset('assets/images/icon/6.png') }}" alt="" class="product-6-layout-view"></li>
+        </ul>
+    </div>
     {{--<div class="product-page-per-view">
         <select>
             <option value="High to low">24 {{trans('app.products-page')}}</option>

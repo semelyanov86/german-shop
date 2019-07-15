@@ -1,7 +1,7 @@
 <div class="product-box">
     <div class="img-wrapper">
         <div class="front">
-            <img src="{{ '/storage/' . $product->image }}" class="img-fluid blur-up lazyload" alt="">
+            <img src="{{ '/storage/' . $product->image }}" class="img-fluid blur-up lazyload" alt="" style="max-width:100%">
         </div>
     </div>
     <div class="product-detail">
