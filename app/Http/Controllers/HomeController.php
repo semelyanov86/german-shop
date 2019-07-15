@@ -38,7 +38,8 @@ class HomeController extends Controller
         $description = $pages[3]->meta_description;
         $keywords = $pages[3]->meta_keywords;
         $other_products = Product::where('active', 1)->get();
-        $products = $order->products->union($other_products);
+//        dd($order->products, $other_products);
+        $products = $other_products->merge($order->products);
 
             /*->filter(function ($value, $key) use ($products){
             return !$products->contains($value);

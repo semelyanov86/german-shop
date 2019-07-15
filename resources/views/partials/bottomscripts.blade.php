@@ -49,16 +49,18 @@
 	//Countdown
 	
 	$('head').append("<link rel=\"stylesheet\" type=\"text/css\" href=\"{{asset('assets/css/countdown.css')}}\" media=\"screen\">");
-	var userTime = document.getElementById('timeInput').value;
-	var userArr = userTime.split('-');
-	$('#countdown-timer').css({'padding-bottom':'50px'}).timeTo({
-      timeTo: new Date(userArr[0], userArr[1], userArr[2]),
-      displayDays: 2,
-      theme: "black",
-      displayCaptions: true,
-      fontSize: 34,
-      captionSize: 14,
-      lang: 'de'
-    });
+	var userInput = document.getElementById('timeInput');
+	if (userInput) {
+        var userTime = document.getElementById('timeInput').value;
+        $('#countdown-timer').css('padding-bottom','50px').timeTo({
+            timeTo: new Date(userTime),
+            theme: "black",
+            displayCaptions: true,
+            fontSize: 34,
+            captionSize: 14,
+            lang: 'de'
+        });
+    }
+
 
 </script>
