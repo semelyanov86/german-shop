@@ -30,6 +30,6 @@ class TimeoutFinished extends Mailable
      */
     public function build()
     {
-        return $this->view('email.timeout')->subject('Timeout is finished!');
+        return $this->markdown('email.timeout')->subject('Timeout is finished!');
     }
 }

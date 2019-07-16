@@ -53,6 +53,6 @@ class SendTimeoutNotification extends Command
             })->first();
             Mail::to($admin_user)->send(new TimeoutFinished($diff));
         }
-        echo $diff;
+        echo $diff . ' - ' . $date . ' - ' . $now;
     }
 }
