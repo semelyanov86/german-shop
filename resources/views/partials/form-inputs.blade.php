@@ -81,7 +81,7 @@
         </div>
     </div>
 </div>
-<div class="form-group">
+<div class="form-group" hidden>
     <div class="form-check">
         <input class="form-check-input @if($errors->has('agb')) is-invalid @endif" name="agb" type="checkbox" value="1" id="agb" checked required>
         <label class="form-check-label" for="agb">

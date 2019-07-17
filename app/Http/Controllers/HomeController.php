@@ -19,7 +19,7 @@ class HomeController extends Controller
 {
     public function main()
     {
-        $page_title = 'Multikart german shop';
+        $page_title = setting('site.title');
         $category = Category::whereSlug('slider')->first();
         $sliders = $category->posts()->get();
         $pages = Page::all();

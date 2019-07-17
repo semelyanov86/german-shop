@@ -33,7 +33,7 @@ class OrderPlaced extends Mailable
     public function build()
     {
         return $this->to($this->order->email, $this->order->name)
-            ->subject('Thanks for your order!')
+            ->subject(trans('app.email-thanks'))
             ->view('email.order_client');
     }
 }

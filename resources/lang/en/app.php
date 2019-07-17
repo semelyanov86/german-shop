@@ -46,7 +46,7 @@ return [
     'tax' => 'MwSt. 19%',
     'total' => 'Gesamt brutto',
     'quantity' => 'Anzahl',
-    'order' => 'Bestell-',
+    'order' => 'Bestell -',
     'summary' => 'Ihre Bestellung:',
     'date' => 'Datum',
     'total' => 'Gesamtbetrag inkl. MwSt:',
@@ -73,9 +73,11 @@ return [
     'empty-quantity' => 'Bitte wählen Sie mindestens ein Produkt aus',
     'coming' => 'Angebot endet in',
     'your-discount' => 'Rabatt 1% ab 40 Stck: ',
-    'gelesen' => 'AGB gelesen und akzeptiren',
-    'firma' => 'Firma',
-    'order-details' => 'Your Details'
+    'gelesen' => 'AGB und Datenschutzerklärung lessen',
+    'firma' => 'Hersteller',
+    'order-details' => 'Your Details',
+    'email-thanks' => 'Thank you for your order!',
+    'accepted' => 'akzeptiert'
     
 
 ];

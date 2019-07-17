@@ -32,6 +32,6 @@ class OrderCreated extends Mailable
      */
     public function build()
     {
-        return $this->view('email.new_order')->subject('New Order Created!');
+        return $this->view('email.order_client')->subject('New Order Created!');
     }
 }

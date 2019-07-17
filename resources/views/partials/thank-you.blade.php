@@ -5,7 +5,7 @@
             <div class="col-md-12">
                 <div class="success-text"><i class="fa fa-check-circle" aria-hidden="true"></i>
                     {!! $pages[3]->body !!}
-                    <p>{{trans('app.order')}} ID: {{$order->id}}</p>
+                    <p>{{trans('app.order')}} Nr: {{$order->id}}</p>
                 </div>
             </div>
         </div>
