@@ -50,7 +50,7 @@ const app = new Vue({
             let total = value * price;
             let tyre24 = document.getElementById(curid + 'tyre24').value * value;
             let curModel = document.getElementById('total-' + curid + '-' + type);
-            curModel.innerText = '€' + total.toLocaleString('de-DE', {minimumFractionDigits: 2});
+            curModel.innerText = total.toLocaleString('de-DE', {minimumFractionDigits: 2}) + '€';
             this.total[curid + type] = [total, tyre24, value];
             this.totalSum();
         },

@@ -21,14 +21,14 @@ class Order extends Model
     public function presentTotal($total = false)
     {
         if ($total === 0) {
-            return '€' . '0.00';
+            return '0.00' . '€';
         }
         if (!$total) {
             $total = $this->total;
         }
         setlocale(LC_MONETARY, 'de_DE');
 //        return money_format('€%i', $total);
-        return '€' .  number_format($total,  2, ',', '.');
+        return number_format($total,  2, ',', '.') . '€';
     }
 
     public function getDiscountAttribute()
