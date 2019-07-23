@@ -57,7 +57,7 @@ return [
     'product-name' => 'Produkt',
     'agb' => 'AGB und Datenschutzerklärung akzeptieren',
     'order-processed' => 'vielen Dank für Ihre Bestellung bei BaRo GmbH. Falls Sie Fragen oder Anregungen haben, kontaktieren Sie uns bitte wahlweise per E-Mail bestellung@baro-reifen.de oder auch gerne per Telefon unter der Rufnummer 040 / 21901290.
-	Nachfolgend finden Sie eine Übersicht Ihrer Bestelldaten.',
+	Nachfolgend finden Sie eine Übersicht Ihrer Bestellung.',
     'info' => 'Zusatzinfo',
     'adv1' => 'free shipping',
     'adv12' => 'free shipping world wide',
@@ -73,11 +73,12 @@ return [
     'empty-quantity' => 'Bitte wählen Sie mindestens ein Produkt aus',
     'coming' => 'Angebot endet in',
     'your-discount' => 'Rabatt 1% ab 40 Stck: ',
-    'gelesen' => 'AGB und Datenschutzerklärung lessen',
+    'gelesen' => 'AGB und Datenschutzerklärung lesen',
     'firma' => 'Hersteller',
     'order-details' => 'Your Details',
-    'email-thanks' => 'Thank you for your order!',
-    'accepted' => 'akzeptiert'
+    'email-thanks' => 'Vielen Dank für Ihre Bestellung!',
+    'accepted' => 'AGB und Datenschutz akzeptiert',
+    'your-counting' => 'Menge'
     
 
 ];

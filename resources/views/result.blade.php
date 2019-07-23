@@ -58,7 +58,7 @@
                         <ul class="order-detail">
                             <li>{{trans('app.order')}} Nr: {{$order->id}}</li>
                             <li>{{trans('app.order')}} {{trans('app.date')}}: {{$order->created_at}}</li>
-                            <li>{{trans('app.total')}}: {{$order->presentTotal($order->final_total)}}</li>
+                            <li>{{trans('app.total')}} {{$order->presentTotal($order->final_total)}}</li>
                         </ul>
                     </div>
                     <div class="col-sm-6">

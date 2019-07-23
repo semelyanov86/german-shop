@@ -30,9 +30,10 @@
                                             </div>
                                         @endif
                                     <div class="container mt-2">
-                                        <h2 class="mt-3">{{trans('app.your-total')}} € @{{ sum }}</h2>
-                                        <h3 class="mt-3">{{trans('app.your-discount')}} € @{{ discount }}</h3>
-                                        <h3 class="mt-2">{{trans('app.savings')}} € @{{ saving }}</h3>
+                                        <h2 class="mt-3">{{trans('app.your-total')}} @{{ sum }} €</h2>
+                                        <h3 class="mt-3">{{trans('app.your-counting')}} @{{ counting }}</h3>
+                                        <h3 class="mt-3">{{trans('app.your-discount')}} @{{ discount }} €</h3>
+                                        <h3 class="mt-2">{{trans('app.savings')}} @{{ saving }} €</h3>
                                     </div>
                                 </div>
                             </div>
