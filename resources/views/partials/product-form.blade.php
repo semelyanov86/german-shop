@@ -7,7 +7,8 @@
                     <div class="page-main-content">
                         <form action="{{route('store.order')}}" method="post">
                             @csrf()
-                        <div class="collection-product-wrapper">
+                            @if(setting('site.show-filter'))
+                            <div class="collection-product-wrapper">
                             <div class="product-top-filter">
                                 <div class="row">
                                     <div class="col-12">
@@ -15,6 +16,7 @@
                                     </div>
                                 </div>
                             </div>
+                            @endif
                             <div class="product-wrapper-grid">
                                 <div class="row">
                                     @foreach($products as $product)
